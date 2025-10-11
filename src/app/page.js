@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps }) {
       <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
         <>
           <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-4">
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
 
             <div className="md:basis-1/2 py-4 px-8">
                       <h2 className="text-2xl text-primary-600 text-center md:text-left">

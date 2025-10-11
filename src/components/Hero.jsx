@@ -39,12 +39,12 @@ export default function Hero({title}) {
               className="w-full h-full object-cover"
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black bg-black max-w-xl mx-auto opacity-50 h-1/2 my-auto"></div>
+            <div className="absolute inset-0 bg-black bg-black max-w-xl mx-auto opacity-50 h-3/4 md:h-1/2 my-auto py-8"></div>
           {/* </div> */}
         {/* ))} */}
 
         {/* Hero content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 max-w-xl mx-auto h-1/2 my-auto">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 max-w-xl mx-auto h-1/2 my-auto py-8">
           {title?
           <>
           <h1 className="text-4xl font-extrabold sm:text-4xl lg:text-5xl">
