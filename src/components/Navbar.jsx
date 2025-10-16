@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import Image from "next/image";
 
 
 export default function Navbar() {
@@ -9,15 +10,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 relative">
+    <nav className="bg-white shadow-md md:sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center ">
+        <div className="flex justify-between h-32 items-center ">
           {/* Logo */}
           <Link href="/" className="font-bold text-gray-800 text-center">
-            <span className="logo text-xl md:text-4xl md-text-4xl text-center">Serah</span>&nbsp;&nbsp;
-            <small className="txt-sm md:text-2xl text-center logo-2">
-            Constructions
-            </small>
+          <Image src="/logo.png" height={200} width={200} alt="logo" className="w-24 h-24" />
           </Link>
 
           {/* Desktop Menu */}

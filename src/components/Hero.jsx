@@ -34,7 +34,7 @@ export default function Hero({title}) {
           > */}
             <img
               // src={src}
-              src={'/hero-image.jpg'}
+              src={'/hero.jpg'}
               alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
             />

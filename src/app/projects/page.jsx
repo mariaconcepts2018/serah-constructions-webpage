@@ -4,71 +4,116 @@ import ImageView from "@/components/FullScreenButton";
 import Image from "next/image";
 import FullScreenButton from "@/components/FullScreenButton";
 
-const projects = ["Residential", "Schools & colleges", "Churchs"]
 
 const data = [
+  {
+      id:"1",
+      title:"Built-in Furniture",
+      project:"Churchs",
+      imgUrl:"/gallery (14).jpg",
+    },
     {
-        id:"1",
-        title:"Project Management",
+      id:"2",
+      title:"Building Construction",
         project:"Residential",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/project-management.jpg",
-    },
-        {
-        id:"2",
-        title:"Building Construction",
-        project:"Schools & colleges",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Building.jpg",
-    },
-        {
+        imgUrl:"/gallery (2).jpg",
+      },
+      {
         id:"3",
         title:"Interiors",
-        project:"Churchs",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Interior-1.jpg",
-    },
-        {
+        project:"Residential",
+        imgUrl:"/gallery (3).jpg",
+      },
+      {
         id:"4",
         title:"Renovation",
         project:"Residential",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Renovation.jpg",
-    },
-        {
+        imgUrl:"/gallery (4).jpg",
+      },
+      {
         id:"5",
         title:"Built-in Furniture",
         project:"Residential",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Built-In-Furniture.jpg",
-    }
-]
-
-export const metadata = {
-  title: "Our Projects | Serah Constructions",
-};
-
-export default function MyApp() {
-
-  return (
-    <>
+        imgUrl:"/gallery (5).jpg",
+      },
+      {
+        id:"6",
+        title:"Built-in Furniture",
+        project:"Schools & colleges",
+        imgUrl:"/gallery (6).jpg",
+      },
+      {
+        id:"7",
+        title:"Built-in Furniture",
+        project:"Schools & colleges",
+        imgUrl:"/gallery (7).jpg",
+      },
+      {
+        id:"8",
+        title:"Built-in Furniture",
+        project:"Schools & colleges",
+        imgUrl:"/gallery (8).jpg",
+      },
+      {
+        id:"9",
+        title:"Built-in Furniture",
+        project:"Schools & colleges",
+        imgUrl:"/gallery (9).jpg",
+      },
+      {
+        id:"10",
+        title:"Built-in Furniture",
+        project:"Schools & colleges",
+        imgUrl:"/gallery (10).jpg",
+      },
+      {
+        id:"11",
+        title:"Built-in Furniture",
+        project:"Churchs",
+        imgUrl:"/gallery (11).jpg",
+      },
+      {
+        id:"12",
+        title:"Built-in Furniture",
+        project:"Churchs",
+        imgUrl:"/gallery (12).jpg",
+      },
+      {
+        id:"13",
+        title:"Built-in Furniture",
+        project:"Churchs",
+        imgUrl:"/gallery (13).jpg",
+      },                    {
+        id:"14",
+        title:"Project Management",
+        project:"Residential",
+        imgUrl:"/gallery (1).jpg",
+      }
+    ]
+    
+    export const metadata = {
+      title: "Our Projects | Serah Constructions",
+    };
+    
+    export default function MyApp() {
+      
+      return (
+        <>
       <main className="bg-white text-gray-800">
         <>
           <Hero title={'Projects'}/>
 
-          <div className="w-1/2 p-6 mx-auto bg-white text-gray-800 mt-4 flex flex-col gap-4">
-
-          {projects.map((project, index) => (
-
-            
-            
-            <div key={index}>
-                    <h1 className="text-2xl text-primary-600">{project}</h1>
-                    <div className="flex flex-row gap-8 flex-wrap">
-                        {data && data.filter((i, index) => i.project === project).map((item, i) => (
-                        <FullScreenButton key={i} src={item.imgUrl} alt={item.title} >
-                          <Image  width={400} height={300} src={item.imgUrl} alt={item.title}/>
+ <div className="flex flex-col justify-center gap-4 mx-auto max-w-7xl p-8">            
+            <div>
+                    <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-evenly">
+                        {data && data.map((item, i) => (
+                        <FullScreenButton className={'basis-1/2 md:basis-1/6'} key={i} src={item.imgUrl} alt={item.title} >
+                          <Image className="max-w-80 h-80 object-cover border border-secondary"  width={400} height={300} src={item.imgUrl} alt={item.title}/>
                         </FullScreenButton>
                         ))}
                     </div>
                     <br/>
                 </div>
-          ))}
 
             <div>
 

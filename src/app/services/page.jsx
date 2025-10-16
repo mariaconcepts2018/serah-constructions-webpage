@@ -2,56 +2,6 @@ import "@/app/globals.css";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 
-const data = [
-    {
-        id:"1",
-        title:"Project Management",
-        content:" Serah Construction and Interiors provides expert project management services, overseeing all aspects of construction projects from initiation to completion Our experienced project managers ensure that projects are delivered on time, within budget, and according to the highest quality standards.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/project-management.jpg",
-    },
-        {
-        id:"2",
-        title:"Building Construction",
-        content:"We specialise in building construction, handling projects of various sizes and complexities, ranging from residential homes to commercial buildings. Our construction team is skilled in executing structural designs with precision, ensuring durability, safety, and aesthetic appeal.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Building.jpg",
-    },
-        {
-        id:"3",
-        title:"Interiors",
-        content:" Serah Construction and Interiors offers interior design and implementation services to enhance the functionality and aesthetics of spaces. Our interior design experts work closely with clients to create customised interiors that reflect their preferences and meet their needs.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Interior-1.jpg",
-    },
-        {
-        id:"4",
-        title:"Renovation",
-        content:"We excel in renovation services, revitalising existing structures to improve functionality, aesthetics, and energy efficiency. Whether it’s a home renovation, office refurbishment, or institutional upgrade, we provide comprehensive solutions tailored to our clients’ requirements.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Renovation.jpg",
-    },
-        {
-        id:"5",
-        title:"Built-in Furniture",
-        content:" Serah Construction and Interiors designs and constructs built-in furniture pieces that seamlessly integrate with interior spaces. Our custom-built furniture solutions are crafted to maximise space utilisation and complement the overall design aesthetic of the environment.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Built-In-Furniture.jpg",
-    },
-        {
-        id:"6",
-        title:"Institutional and Church Works",
-        content:"We specialise in institutional and church construction projects, understanding the unique requirements and sensitivities involved in such endeavours. Our team is experienced in delivering projects that meet the functional, aesthetic, and spiritual needs of institutional and religious organisations.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Institutional-And-Church-Work.jpg",
-    },
-        {
-        id:"7",
-        title:"Residentials",
-        content:" Serah Construction and Interiors offers residential construction and renovation services, catering to the diverse needs and preferences of homeowners. From single-family homes to multi-unit developments, we deliver high-quality residential projects that exceed expectations.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/residental.jpg",
-    },
-        {
-        id:"8",
-        title:"Office Spaces",
-        content:"We design and build functional and inspiring office spaces that promote productivity, collaboration, and employee well-being. Our office space solutions are tailored to the specific requirements of businesses, reflecting their brand identity and corporate culture.",
-        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Office-Spaces.jpg",
-    },
-]
 
 export const metadata = {
   title: "Services | Serah Constructions",
@@ -61,36 +11,93 @@ export default function MyApp() {
 
   return (
     <>
-      <main className="bg-white text-gray-800">
-        <>
-          <Hero title={'Our Services'}/>
+    <Hero title={"Our Services"} />
+      <main className="bg-white px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-gray-800">
 
-          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4 flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly pt-4 pb-4 gap-8">
 
-          {data && data.map((item, index) => (
-            
-                <div key={item.id} className={`flex flex-col ${index % 2 === 0? 'md:flex-row': 'md:flex-row-reverse'} border-b border-primary-600 py-8`}>
-                    <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
-                    <div className="p-8">
-                        <div>
-                            <h1  className="text-2xl text-primary-600">
-                                {item.title}
-                            </h1>
-                            <p>
-                                {item.content}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-          ))}
-
-            <div>
+            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
+                <h2 className="text-xl">Project Management</h2>
+                <p className="text-sm pt-2 md:pt-4">
+    Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.
+                </p>
 
             </div>
-          
+            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/interiors.svg" height={36} width={36} alt="svg-icon prject management"/>
+                <h2 className="text-xl">Interior Design</h2>
+                <p className="text-sm pt-2 md:pt-4">
+        Our interior design specialists in Bengaluru collaborate closely with clients to create customised spaces that reflect their style, enhance functionality, and align perfectly with their vision.
+
+                </p>
+            </div>
+            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/construction.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+<h2 className="text-xl">Constructions</h2>
+<p className="text-sm pt-2 md:pt-4">
+        Our construction team in Bengaluru brings expertise and precision to every build, executing structural designs that deliver durability, safety, and long-lasting aesthetic appeal.
+
+</p>
+
+            </div>
+                                    <div className="border border-primary p-4 md:p-8  md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/renovation.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Renovation</h2>
+              <p className="text-sm pt-2 md:pt-4">
+        Whether it’s a home renovation, office refurbishment, or institutional upgrade, we deliver comprehensive construction and interior solutions in Bengaluru, tailored to meet each client’s unique requirements.
+
+              </p>
+            </div>
+                        <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/furniture.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Custom Furnitures</h2>
+              <p className="text-sm pt-2 md:pt-4">
+       We design and construct custom built-in furniture in Bengaluru that integrates seamlessly with interiors, maximising space utilisation and complementing the overall design aesthetic of your environment.
+
+              </p>
+            </div>
+
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/church.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Institution and Church Works</h2>
+              <p className="text-sm pt-2 md:pt-4">
+
+We specialise in institution and church construction in Bengaluru, with a deep understanding of the unique requirements and sensitivities these projects demand. Our experienced team delivers spaces that meet the functional, aesthetic, and spiritual needs of religious and institutional organisations.
+</p>
+
+            </div>
+
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/home.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Residentials</h2>
+              <p className="text-sm pt-2 md:pt-4">
+
+Serah Constructions provides expert residential construction and renovation services in Bengaluru, tailored to the unique needs and preferences of homeowners. From single-family homes to multi-unit developments, we deliver high-quality projects that exceed expectations.
+
+
+              </p>
+            </div>
+
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+              <Image className="mb-4 text-primary-500" src="/office.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Office Spaces</h2>
+              <p className="text-sm pt-2 md:pt-4">
+We design and build functional, inspiring office spaces in Bengaluru that boost productivity, collaboration, and employee well-being. Our customised office solutions align with each business’s unique needs, reflecting their brand identity and corporate culture.
+</p>
+
+
+            </div>
+
           </div>
 
-        </>
+
       </main>
     </>
   );

@@ -15,12 +15,9 @@ export default function Footer() {
 
         <div  className="bg-white text-gray-800   p-8 w-full">
 
-           <h1 className="text-2xl font-bold text-gray-800 text-center">
-            <span className="logo text-2xl md-text-4xl text-center">Serah</span>&nbsp;
-            <small className="text-sm text-center logo-2">
-            Constructions
-            </small>
-          </h1>
+          <Link href="/" className="font-bold text-gray-800 text-center">
+          <Image src="/logo.png" height={200} width={200} alt="logo" className="w-24 h-24 mx-auto" />
+          </Link>
           <br/>
                 <h6 className="text-secondary-500">
                         Follow Us On
@@ -48,11 +45,8 @@ export default function Footer() {
       </Link>
       <Link href="/" className="hover:text-primary-500 transition">
       
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24">
-    <path fill="currentColor" d="M12.222 5.977a5.402 5.402 0 0 1 3.823 1.496l2.868-2.868A9.61 9.61 0 0 0 12.222 2a9.996 9.996 0 0 0-8.937 5.51l3.341 2.59a5.96 5.96 0 0 1 5.596-4.123z" opacity=".7"/>
-    <path fill="currentColor" d="M3.285 7.51a10.013 10.013 0 0 0 0 8.98l3.341-2.59a5.913 5.913 0 0 1 0-3.8l-3.34-2.59z"/>
-    <path fill="currentColor" d="M15.608 17.068A6.033 6.033 0 0 1 6.626 13.9l-3.34 2.59A9.996 9.996 0 0 0 12.221 22a9.547 9.547 0 0 0 6.618-2.423l-3.232-2.509z" opacity=".5"/>
-    <path fill="currentColor" d="M21.64 10.182h-9.418v3.868h5.382a4.6 4.6 0 0 1-1.996 3.018l-.01.006l.01-.006l3.232 2.51a9.753 9.753 0 0 0 2.982-7.35c0-.687-.06-1.371-.182-2.046z" opacity=".25"/>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path fill="currentColor" d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8c0-14.3 5.7-27.9 15.8-38S39.6 0 53.8 0s27.9 5.7 38 15.8s15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3M447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2c-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3c94 0 111.3 61.9 111.3 142.3V448z"/>
 </svg>
       </Link>
   
@@ -89,7 +83,7 @@ export default function Footer() {
        <p >
 
 
-+91 90 36 36 86 88
++91 86607 51241
        </p>
         </div>
 
