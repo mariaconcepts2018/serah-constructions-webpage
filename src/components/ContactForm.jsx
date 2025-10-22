@@ -11,12 +11,10 @@ export default function ContactForm({ Component, pageProps }) {
     const e = {};
     if (!form.name.trim()) e.name = "Name is required.";
     if (!form.email.trim()) e.email = "Email is required.";
-    if (!form.phone.trim()) e.phone = "Phone Number is required.";
-    if (!form.budget.trim()) e.budget = "Project Budget is required.";
+    if (!form.phone.trim()) e.phone = "Phone number is required.";
+    if (!form.budget.trim()) e.budget = "Project budget is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email.";
-    if (!form.message.trim() || form.message.trim().length < 10)
-      e.message = "Message must be at least 10 characters.";
     return e;
   }
 
@@ -105,22 +103,6 @@ export default function ContactForm({ Component, pageProps }) {
 
         {errors.email && <p id="email-error" className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </label>
-    
-    {/* <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Project Budget</span>
-        <input
-          type="budget"
-          name="budget"
-          value={form.budget}
-          onChange={(e) => setForm({ ...form, budget: e.target.value })}
-          className={`mt-1 block w-full   border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.budget ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
-          }`}
-          aria-invalid={errors.budget ? "true" : "false"}
-          aria-describedby={errors.budget ? "budget-error" : undefined}
-          />
-        {errors.budget && <p id="budget-error" className="mt-1 text-xs text-red-600">{errors.budget}</p>}
-      </label> */}
 
       <label htmlFor="service" className="block mb-3 w-full basis-full md:basis-1/2 p-2">
         <span className="text-sm">Select Project Budget</span>
@@ -129,6 +111,7 @@ export default function ContactForm({ Component, pageProps }) {
         id="service"
         name="service"
         defaultValue={""}
+        onChange={(e) => setForm({ ...form, budget: e.target.value })}
         className={`mt-1 block w-full   border px-3 py-2.5 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.budget ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
@@ -139,10 +122,12 @@ export default function ContactForm({ Component, pageProps }) {
         <option value="3">25 - 50 Lakhs</option>
         <option value="4">More than 50 Lakhs</option>
       </select>
+        {errors.budget && <p id="budget-error" className="mt-1 text-xs text-red-600">{errors.budget}</p>}
+
         </label>
 
       <label className="block mb-4 basis-full p-2">
-        <span className="text-sm">Message</span>
+        <span className="text-sm">Message &#40;optional&#41;</span>
         <textarea
           name="message"
           value={form.message}
@@ -151,10 +136,7 @@ export default function ContactForm({ Component, pageProps }) {
           className={`mt-1 block w-full   border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.message ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
-          aria-invalid={errors.message ? "true" : "false"}
-          aria-describedby={errors.message ? "message-error" : undefined}
           />
-        {errors.message && <p id="message-error" className="mt-1 text-xs text-red-600">{errors.message}</p>}
       </label>
 
           </div>

@@ -15,12 +15,9 @@ export default function Footer() {
 
         <div  className="bg-white text-gray-800   p-8 w-full">
 
-          <Link href="/" className="font-bold text-gray-800 text-center">
-          <Image src="/logo.png" height={200} width={200} alt="logo" className="w-24 h-24 mx-auto" />
-          </Link>
           <br/>
-                <h6 className="text-secondary-500">
-                        Follow Us On
+                <h6 className="text-secondary-500 text-2xl">
+                        Follow Us
                 </h6>
                 <br/>
 
@@ -53,18 +50,10 @@ export default function Footer() {
                 </div>
 
 <br/>
-                       <Link
-              href="/contact"
-              className="block mt-4 px-6 py-3 bg-primary-500 text-white uppercase font-medium   hover:bg-primary-400 transition"
-              >
-              Contact Us
-            </Link>     
         </div>
         </div>
       {/* Footer container */}
-<div className="p-2 md:p-6 text-center">
-<GoogleMap />
-</div>
+
 <div className="text-left p-4 text-center">
 
 
@@ -83,7 +72,7 @@ export default function Footer() {
        <p >
 
 
-+91 86607 51241
++91 95388 39986
        </p>
         </div>
 

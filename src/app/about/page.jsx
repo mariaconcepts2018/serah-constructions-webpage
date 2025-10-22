@@ -1,3 +1,4 @@
+import GoogleMap from "@/components/GoogleMap";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 
@@ -55,8 +56,10 @@ Dedicated to excellence in every project, Serah Construction strives to deliver 
 
             </div>
 </div>
-          
-
+        <h3 className="text-center text-3xl text-primary">Locate Us</h3>  
+<div className="p-2 md:p-6 text-center md:w-1/2 mx-auto">
+<GoogleMap />
+</div>
           <div className="max-w-7xl p-6 mx-auto bg-white text-gray-800 mt-4">
 
  <br/>

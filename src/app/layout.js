@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Poller_One } from
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import WhatsApp from "@/components/WhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
       <Navbar />
         {children}
       <Footer/>
+      <WhatsApp />
       </body>
     </html>
   );

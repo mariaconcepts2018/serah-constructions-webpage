@@ -43,24 +43,6 @@ const data = [
         imgUrl:"/gallery (6).jpg",
       },
       {
-        id:"7",
-        title:"Built-in Furniture",
-        project:"Schools & colleges",
-        imgUrl:"/gallery (7).jpg",
-      },
-      {
-        id:"8",
-        title:"Built-in Furniture",
-        project:"Schools & colleges",
-        imgUrl:"/gallery (8).jpg",
-      },
-      {
-        id:"9",
-        title:"Built-in Furniture",
-        project:"Schools & colleges",
-        imgUrl:"/gallery (9).jpg",
-      },
-      {
         id:"10",
         title:"Built-in Furniture",
         project:"Schools & colleges",

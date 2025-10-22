@@ -78,6 +78,10 @@ body {
   font-family: "Sansation", Arial, Helvetica, sans-serif;
 }
 
+svg.logo-xl{
+  max-width: 3rem;
+}
+
 h1, h2, h3, h4, h5, h6{
   font-family: "Poller One", Arial, Helvetica, sans-serif !important;
 }

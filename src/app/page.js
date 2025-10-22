@@ -13,9 +13,9 @@ export default function MyApp({ Component, pageProps }) {
           <Hero/>
       <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
         <>
-          <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-4">
+          <div className="max-w-7xl mx-auto bg-white text-gray-800 md:mt-4">
             <div className="md:basis-1/2 p-2">
-              <h2 className="text-2xl text-primary-600 text-center md:text-left">
+              <h2 className="text-2xl text-primary-600 text-center py-8">
                 About Us
               </h2>
               <p className="pb-4">
@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }) {
 
 
 
-          <h2 className="text-2xl text-primary-600 text-center md:text-left">
+          <h2 className="text-2xl text-primary-600 text-center pt-12">
             Our Services
           </h2>
           <div className="flex flex-col md:flex-row justify-evenly gap-4 pt-4 pb-4">
@@ -69,7 +69,7 @@ export default function MyApp({ Component, pageProps }) {
             </div>
           </div>
 
-          <div className="mt-2 py-4">
+          <div className="mt-2 py-4 text-center">
             <Link
               href="/services"
               className="px-6 py-3 bg-primary-500 text-white uppercase font-medium   hover:bg-primary-400 transition"
@@ -77,37 +77,6 @@ export default function MyApp({ Component, pageProps }) {
               View More
             </Link>
             </div>
-
-                      <div className="w-full mx-auto text-left bg-white text-gray-800 mt-12">
-                    <h2 className="text-2xl text-primary-600 text-center md:text-left">
-            Our Portfolio
-          </h2>
-
-          <div className="flex flex-col md:flex-row md:flex-nowrap items-center justify-center mb-8 gap-8">
-            <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
-            </div>
-            <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/building.jpg" width={400} height={300} alt="building" />
-            </div>
-                        <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
-            </div>
-                        <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded"  src="/office.jpg" width={400} height={300} alt="building" />
-            </div>
-
-            
-          </div>
-          </div>
-
-                      <Link
-              href="/projects"
-              className="px-6 py-3 bg-primary-500 text-white uppercase font-medium   hover:bg-primary-400 transition"
-              >
-              View More
-            </Link>
-
           <div className="mt-6 p-4 md:py-4   flex flex-col gap-4 md:flex-row md:justify-between justify-between bg-secondary-600 text-white items-start md:items-center mt-12">
             <h3  className="text-xl px-4">
               Get a Free Quote 
@@ -118,10 +87,41 @@ export default function MyApp({ Component, pageProps }) {
               <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" fill="#194c69"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
               </div>
               <div>
-              <p>+91 +91 86607 51241 </p><small> Call us now</small>
+              <p>+91 95388 39986 </p><small> Call us now</small>
               </div>
             </div>
           </div>
+
+                      <div className="w-full mx-auto text-center bg-white text-gray-800 mt-12">
+                    <h2 className="text-2xl text-primary-600 text-center pt-12">
+            Our Portfolio
+          </h2>
+
+          <div className="flex flex-col md:flex-row md:flex-nowrap items-center justify-center mb-8 gap-8">
+            <div className=" border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
+            </div>
+            <div className=" border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/building.jpg" width={400} height={300} alt="building" />
+            </div>
+                        <div className=" border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
+            </div>
+                        <div className="border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image  src="/office.jpg" width={400} height={300} alt="building" />
+            </div>
+
+            
+          </div>
+                      <Link
+              href="/projects"
+              className="px-6 py-3 bg-primary-500 text-white text-center uppercase font-medium   hover:bg-primary-400 transition"
+              >
+              View More
+            </Link>
+          </div>
+
+
 
           </div>
         </>
