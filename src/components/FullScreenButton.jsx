@@ -6,7 +6,7 @@ export default function FullScreenButton({src, alt, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className="bg-neutral-800">
       {/* Open Modal Button */}
       <button
         onClick={() => setIsOpen(true)}

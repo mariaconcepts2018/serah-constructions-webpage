@@ -10,11 +10,11 @@ export default function MyApp({ }) {
     
   return (
     <>
-      <main className="bg-white text-gray-800">
+      <main className="bg-neutral-800 text-neutral-100">
         <>
           <Hero title={'Contact Us'}/>
 
-          <div className="max-w-7xl p-2 md:p-6 mx-auto text-left bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-2 md:p-6 mx-auto text-left mt-4">
 
             <ContactForm />
           

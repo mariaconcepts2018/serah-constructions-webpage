@@ -3,42 +3,32 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
+import Logo from "@/icons/Logo";
 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   const pathname = usePathname();
 
-    useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 60) {
-        // scrolling down
-        setHidden(true);
-      } else {
-        // scrolling up
-        setHidden(false);
-      }
-      setLastScrollY(window.scrollY);
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 w-full z-100 ${isOpen?'bg-white':'bg-none'} transition ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
+    <nav className={`fixed top-0 right-0 left-0 w-full shadow-md z-100 bg-neutral-900 transition`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <div className="flex justify-between h-32 items-center ">
+        <div className="flex justify-between h-12 md:h-20 items-center">
           {/* Logo */}
-          <Link href="/" className="font-bold text-gray-800 text-center">
-          <Image className="bg-white md:w-32 md:h-32 rounded-full" src="/logo.png" height={100} width={100} alt="logo" />
+
+          <Link href="/">
+          <Logo className="w-12 md:w-20" />
           </Link>
 
+          <p className="md:hidden block text-neutral-100">
+            <span className="font-bold">SERAH</span> <small>Constructions</small>
+          </p>
+
           {/* Desktop Menu */}
-          <div className="static md:relative hidden md:flex gap-12 bg-black/50 py-4 px-8 rounded">
+          <div className="static md:relative hidden md:flex gap-12 py-4 px-8 rounded">
             <Link href="/" className={`text-white ${(pathname === '/') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
               Home
             </Link>
@@ -58,14 +48,14 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-primary-600 focus:outline-none"
+            className="md:hidden text-white hover:text-primary-600 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
               // Close Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-black"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -76,7 +66,7 @@ export default function Navbar() {
               // Hamburger Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-white"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -90,21 +80,21 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute w-full md:hidden bg-white">
+        <div className="absolute w-full md:hidden bg-neutral-800 border border-neutral-300 text-white">
           <div className="flex flex-col space-y-2 gap-4 p-4 pb-8 items-center">
-            <Link onClick={()=> setIsOpen(false)} href="/" className="text-gray-700 hover:text-primary-600 font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/" className="font-semibold">
               Home
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/about" className="text-gray-700 hover:text-primary-600 font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/about" className="font-semibold">
               About
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/services" className="text-gray-700 hover:text-primary-600 font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/services" className="font-semibold">
               Services
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/projects" className="text-gray-700 hover:text-primary-600 font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/projects" className="font-semibold">
               Projects
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/contact" className="text-gray-700 hover:text-primary-600 font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/contact" className="font-semibold">
               Contact
             </Link>
           </div>

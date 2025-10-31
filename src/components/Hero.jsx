@@ -43,7 +43,7 @@ export default function Hero({title}) {
         {/* ))} */}
 
         {/* Hero content */}
-        <div className="absolute inset-0 bg-black/50 h-full md:h-100 flex flex-col items-center justify-center text-center text-white px-6 max-w-xl mx-auto h-1/2 my-auto py-8">
+        <div className="absolute inset-0 bg-black/60 h-full h-100 flex flex-col items-center justify-center text-center text-white px-6 w-full py-8">
           {title?
           <>
           <h1 className="text-4xl font-extrabold sm:text-4xl lg:text-5xl">
@@ -60,16 +60,16 @@ export default function Hero({title}) {
             Strong foundations. Strong relationships.
           </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 md:flex-row">
+                    <div className="mt-8 flex flex-col text-center items-center gap-4 justify-center md:flex-row">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-primary-500 text-gray-100 uppercase font-medium   hover:bg-primary-400 transition"
+              className="px-6 py-3 bg-primary-500 text-neutral-900 uppercase font-medium rounded-xs  hover:bg-primary-400 transition"
             >
-              Book Your Consultation
+              Enquire Now
             </Link>
             <Link
               href="/services"
-              className="px-6 py-3 border border-white text-white uppercase font-medium   hover:bg-white hover:text-secondary-600 transition"
+              className="px-6 py-3 border border-white text-white uppercase font-medium rounded-xs  hover:bg-white hover:text-secondary-600 transition"
             >
               Learn More
             </Link>

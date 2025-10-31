@@ -81,7 +81,7 @@ const data = [
       
       return (
         <>
-      <main className="bg-white text-gray-800">
+      <main className="bg-neutral-800 text-neutral-100">
         <>
           <Hero title={'Projects'}/>
 

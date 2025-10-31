@@ -3,18 +3,18 @@
 :root {
   --background: #f0f0f0;
   --foreground: #171717;
-  --primary: #194c69;
+  --primary: #f0d28b;
   --secondary: #333337;
 
     /* Primary shades */
-  --primary-100: hsl(202, 62%, 65%);
-  --primary-200: hsl(202, 62%, 55%);
-  --primary-300: hsl(202, 62%, 45%);
-  --primary-400: hsl(202, 62%, 35%);
-  --primary-500: hsl(202, 62%, 25%); /* base */
-  --primary-600: hsl(202, 62%, 15%);
-  --primary-700: hsl(202, 62%, 05%);
-  --primary-800: hsl(202, 62%, 0%);
+  --primary-100: hsl(42, 77%, 90%);
+  --primary-200: hsl(42, 77%, 85%);
+  --primary-300: hsl(42, 77%, 80%);
+  --primary-400: hsl(42, 77%, 84%);
+  --primary-500: hsl(42, 77%, 74%); /* base */
+  --primary-600: hsl(42, 77%, 64%);
+  --primary-700: hsl(42, 77%, 54%);
+  --primary-800: hsl(42, 77%, 44%);
 
   /* Secondary shades */
   --secondary-100: hsl(240, 2%, 90%);
@@ -64,33 +64,39 @@
   }
 }
 
+/* @media (min-width: 769px) {
+svg.logo-xl{
+  max-width: 5em !important;
+}
+
+
+} */
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Sansation, Arial, Helvetica, sans-serif !important;
 }
 
-.logo {
-  font-family: "Quintessential", Arial, Helvetica, sans-serif;
-}
-
-.logo-2 {
-  font-family: "Sansation", Arial, Helvetica, sans-serif;
+/* svg.logo-lg{
+  max-width: 3em;
 }
 
 svg.logo-xl{
-  max-width: 3rem;
+  max-width: 3em;
 }
-
+svg.logo-xxl{
+  max-width: 6em;
+}  */
 h1, h2, h3, h4, h5, h6{
   font-family: "Poller One", Arial, Helvetica, sans-serif !important;
 }
 
-svg{
+/* svg{
     width: 100%;
   height: auto;
-  max-width: 2rem; /* optional */
-}
+  max-width: 2em; /* optional */
+
 
 ul.arrow{
 list-style-image: url('/arrow.svg');

@@ -12,11 +12,11 @@ export default function MyApp() {
   return (
     <>
     <Hero title={"Our Services"} />
-      <main className="bg-white px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-gray-800">
+      <main className=" px-4 xl:px-8 py-12 mx-auto w-full bg-neutral-800 text-neutral-100">
 
           <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly pt-4 pb-4 gap-8">
 
-            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
                 <h2 className="text-xl">Project Management</h2>
                 <p className="text-sm pt-2 md:pt-4">
@@ -24,7 +24,7 @@ export default function MyApp() {
                 </p>
 
             </div>
-            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/interiors.svg" height={36} width={36} alt="svg-icon prject management"/>
                 <h2 className="text-xl">Interior Design</h2>
                 <p className="text-sm pt-2 md:pt-4">
@@ -32,7 +32,7 @@ export default function MyApp() {
 
                 </p>
             </div>
-            <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/construction.svg" height={36} width={36} alt="svg-icon prject management"/>
 
 <h2 className="text-xl">Constructions</h2>
@@ -42,7 +42,7 @@ export default function MyApp() {
 </p>
 
             </div>
-                                    <div className="border border-primary p-4 md:p-8  md:basis-1/3">
+                                    <div className="border border-primary p-4 md:p-8  md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/renovation.svg" height={36} width={36} alt="svg-icon prject management"/>
 
               <h2 className="text-xl">Renovation</h2>
@@ -51,7 +51,7 @@ export default function MyApp() {
 
               </p>
             </div>
-                        <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+                        <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/furniture.svg" height={36} width={36} alt="svg-icon prject management"/>
 
               <h2 className="text-xl">Custom Furnitures</h2>
@@ -61,7 +61,7 @@ export default function MyApp() {
               </p>
             </div>
 
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/church.svg" height={36} width={36} alt="svg-icon prject management"/>
 
               <h2 className="text-xl">Institution and Church Works</h2>
@@ -72,7 +72,7 @@ We specialise in institution and church construction in Bengaluru, with a deep u
 
             </div>
 
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/home.svg" height={36} width={36} alt="svg-icon prject management"/>
 
               <h2 className="text-xl">Residentials</h2>
@@ -84,7 +84,7 @@ Serah Constructions provides expert residential construction and renovation serv
               </p>
             </div>
 
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/3">
+                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
               <Image className="mb-4 text-primary-500" src="/office.svg" height={36} width={36} alt="svg-icon prject management"/>
 
               <h2 className="text-xl">Office Spaces</h2>
