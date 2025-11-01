@@ -12,7 +12,7 @@ export default function MyApp({ }) {
     <>
       <main className="bg-neutral-800 text-neutral-100">
         <>
-          <Hero title={'Contact Us'}/>
+          <Hero title={'Get In Touch'}/>
 
           <div className="max-w-7xl p-2 md:p-6 mx-auto text-left mt-4">
 

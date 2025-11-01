@@ -57,7 +57,7 @@
   --font-sans: var(--font-fugaz-one-sans);
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -89,7 +89,7 @@ svg.logo-xxl{
   max-width: 6em;
 }  */
 h1, h2, h3, h4, h5, h6{
-  font-family: "Poller One", Arial, Helvetica, sans-serif !important;
+  font-family: "righteous", Arial, Helvetica, sans-serif !important;
 }
 
 /* svg{
@@ -101,4 +101,7 @@ h1, h2, h3, h4, h5, h6{
 ul.arrow{
 list-style-image: url('/arrow.svg');
 }
-
+input:-webkit-autofill {
+  background-color: black !important;
+  color: white !important;
+}

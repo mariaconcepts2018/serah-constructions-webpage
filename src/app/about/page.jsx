@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
           <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
 
             <div className="basis-1/2 p-4">
-              <Image src="/gallery (13).jpg"
+              <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994636/gallery_13_pnynem.avif"
                 width={800}
                 height ={600}
                 alt="Our team"

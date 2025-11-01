@@ -7,6 +7,50 @@ export const metadata = {
   title: "Services | Serah Constructions",
 };
 
+const data = [
+  {
+  title: "Constructions",
+  description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+  imgUrl:"https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=779",
+  },
+  {
+    title: "Project Management",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1677078610588-aed2834ad968?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1176",
+  },
+    {
+    title: "Interior Design",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1664711942326-2c3351e215e6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1117",
+  },
+    {
+    title: "Renovation",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1674649207083-281c2517ab49?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+  },
+    {
+    title: "Custom Furnitures",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+  },
+    {
+    title: "Institution and Church Works",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1667489010867-a7a46e76faee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+  },
+    {
+    title: "Residentials",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174",
+  },
+    {
+    title: "Office Spaces",
+    description: "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
+    imgUrl:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169",
+  },
+  
+]
+
 export default function MyApp() {
 
   return (
@@ -14,87 +58,28 @@ export default function MyApp() {
     <Hero title={"Our Services"} />
       <main className=" px-4 xl:px-8 py-12 mx-auto w-full bg-neutral-800 text-neutral-100">
 
-          <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly pt-4 pb-4 gap-8">
-
-            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
-                <h2 className="text-xl">Project Management</h2>
-                <p className="text-sm pt-2 md:pt-4">
-    Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.
-                </p>
-
-            </div>
-            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/interiors.svg" height={36} width={36} alt="svg-icon prject management"/>
-                <h2 className="text-xl">Interior Design</h2>
-                <p className="text-sm pt-2 md:pt-4">
-        Our interior design specialists in Bengaluru collaborate closely with clients to create customised spaces that reflect their style, enhance functionality, and align perfectly with their vision.
-
-                </p>
-            </div>
-            <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/construction.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-<h2 className="text-xl">Constructions</h2>
-<p className="text-sm pt-2 md:pt-4">
-        Our construction team in Bengaluru brings expertise and precision to every build, executing structural designs that deliver durability, safety, and long-lasting aesthetic appeal.
-
-</p>
-
-            </div>
-                                    <div className="border border-primary p-4 md:p-8  md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/renovation.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-              <h2 className="text-xl">Renovation</h2>
-              <p className="text-sm pt-2 md:pt-4">
-        Whether it’s a home renovation, office refurbishment, or institutional upgrade, we deliver comprehensive construction and interior solutions in Bengaluru, tailored to meet each client’s unique requirements.
-
-              </p>
-            </div>
-                        <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/furniture.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-              <h2 className="text-xl">Custom Furnitures</h2>
-              <p className="text-sm pt-2 md:pt-4">
-       We design and construct custom built-in furniture in Bengaluru that integrates seamlessly with interiors, maximising space utilisation and complementing the overall design aesthetic of your environment.
-
-              </p>
-            </div>
-
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/church.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-              <h2 className="text-xl">Institution and Church Works</h2>
-              <p className="text-sm pt-2 md:pt-4">
-
-We specialise in institution and church construction in Bengaluru, with a deep understanding of the unique requirements and sensitivities these projects demand. Our experienced team delivers spaces that meet the functional, aesthetic, and spiritual needs of religious and institutional organisations.
-</p>
-
-            </div>
-
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/home.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-              <h2 className="text-xl">Residentials</h2>
-              <p className="text-sm pt-2 md:pt-4">
-
-Serah Constructions provides expert residential construction and renovation services in Bengaluru, tailored to the unique needs and preferences of homeowners. From single-family homes to multi-unit developments, we deliver high-quality projects that exceed expectations.
-
-
-              </p>
-            </div>
-
-                                    <div className="border border-primary p-4 md:p-8 md:basis-1/5">
-              <Image className="mb-4 text-primary-500" src="/office.svg" height={36} width={36} alt="svg-icon prject management"/>
-
-              <h2 className="text-xl">Office Spaces</h2>
-              <p className="text-sm pt-2 md:pt-4">
-We design and build functional, inspiring office spaces in Bengaluru that boost productivity, collaboration, and employee well-being. Our customised office solutions align with each business’s unique needs, reflecting their brand identity and corporate culture.
-</p>
-
-
-            </div>
-
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly pt-4 pb-4 gap-2 max-w-7xl mx-auto">
+            {data.map((item, index) => (
+              <div key={index} className="cursor-pointer group relative flex flex-col my-3 bg-neutral-700 shadow-sm border border-neutral-900 rounded-xs w-84 hover:shadow-lg transition-shadow duration-300">
+  <div className="relative h-48 overflow-hidden text-white rounded-xs">
+    <img className="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110" 
+         src={item.imgUrl} alt={item.title} />
+  </div>
+  <div className="p-4">
+    <p className="mb-2 text-primary text-xxxl font-semibold">
+      {item.title}
+    </p>
+    <p className="text-neutral-200 text-xs leading-normal font-light">
+      {item.description}
+    </p>
+  </div>
+  <div className="px-4 pb-4 pt-0 ">
+    <button className="rounded-xs bg-primary py-1 px-2 border border-transparent text-center text-xs text-black transition-all shadow-md hover:shadow-lg focus:bg-primary-700 focus:shadow-none active:bg-primaty-300 hover:bg-primary-300 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Read More
+    </button>
+  </div>
+</div> 
+            ))}
           </div>
 
 

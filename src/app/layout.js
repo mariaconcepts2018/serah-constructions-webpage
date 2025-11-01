@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Poller_One } from "next/font/google";
+import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Righteous } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -32,8 +32,8 @@ const roboto = Roboto({
   weight: ["400"]
 });
 
-const pollerOne = Poller_One({
-  variable: "--font-poller-one-sans",
+const righteous = Righteous({
+  variable: "--font-righteous",
   subsets: ["latin"],
   weight: ["400"]
 });
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pollerOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
       >
       <Navbar />
         {children}

@@ -14,7 +14,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 w-full shadow-md z-100 bg-neutral-900 transition`}>
+    <nav className={`fixed top-0 right-0 left-0 w-full shadow-md z-100 bg-neutral-900 transition border-b border-neutral-600`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex justify-between h-12 md:h-20 items-center">
           {/* Logo */}
@@ -29,19 +29,19 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="static md:relative hidden md:flex gap-12 py-4 px-8 rounded">
-            <Link href="/" className={`text-white ${(pathname === '/') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
+            <Link href="/" className={`text-white ${(pathname === '/') && 'border-b'} hover:text-neutral-400 hover:border-neutral-400 uppercase transition`}>
               Home
             </Link>
-            <Link href="/about" className={`text-white ${(pathname === '/about') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
+            <Link href="/about" className={`text-white ${(pathname === '/about') && 'border-b'} hover:text-neutral-400 hover:border-neutral-400 uppercase transition`}>
               About
             </Link>
-            <Link href="/services" className={`text-white ${(pathname === '/services') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
+            <Link href="/services" className={`text-white ${(pathname === '/services') && 'border-b'} hover:text-neutral-400 hover:border-neutral-400 uppercase transition`}>
               Services
             </Link>
-            <Link href="/projects" className={`text-white ${(pathname === '/projects') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
+            <Link href="/projects" className={`text-white ${(pathname === '/projects') && 'border-b'} hover:text-neutral-400 hover:border-neutral-400 uppercase transition`}>
               Projects
             </Link>
-            <Link href="/contact" className={`text-white ${(pathname === '/contact') && 'border-b'} font-semibold hover:text-secondary-200 hover:border-secondary-200 uppercase transition`}>
+            <Link href="/contact" className={`text-white ${(pathname === '/contact') && 'border-b'} hover:text-neutral-400 hover:border-neutral-400 uppercase transition`}>
               Contact
             </Link>
           </div>
@@ -61,8 +61,7 @@ export default function Navbar() {
                 stroke="currentColor"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
+              </svg>) : (
               // Hamburger Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,21 +79,21 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute w-full md:hidden bg-neutral-800 border border-neutral-300 text-white">
+        <div className="absolute w-full md:hidden bg-neutral-900 border-b border-t border-neutral-600">
           <div className="flex flex-col space-y-2 gap-4 p-4 pb-8 items-center">
-            <Link onClick={()=> setIsOpen(false)} href="/" className="font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/" className={`font-semibold ${pathname=== '/'? 'text-neutral-400' : 'text-neutral-100'}`}>
               Home
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/about" className="font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/about" className={`font-semibold ${pathname=== '/about'? 'text-neutral-400' : 'text-neutral-100'}`}>
               About
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/services" className="font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/services" className={`font-semibold ${pathname=== '/services'? 'text-neutral-400' : 'text-neutral-100'}`}>
               Services
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/projects" className="font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/projects" className={`font-semibold ${pathname=== '/projects'? 'text-neutral-400' : 'text-neutral-100'}`}>
               Projects
             </Link>
-            <Link onClick={()=> setIsOpen(false)} href="/contact" className="font-semibold">
+            <Link onClick={()=> setIsOpen(false)} href="/contact" className={`font-semibold ${pathname=== '/contact'? 'text-neutral-400' : 'text-neutral-100'}`}>
               Contact
             </Link>
           </div>
