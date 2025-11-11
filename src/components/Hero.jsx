@@ -26,7 +26,7 @@ export default function Hero({title}) {
           > */}
             <img
               // src={src}
-              src={'https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994636/hero_p4c85t.avif'}
+              src={'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070'}
               alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
             />
@@ -35,7 +35,7 @@ export default function Hero({title}) {
         {/* ))} */}
 
         {/* Hero content */}
-        <div className="absolute inset-0 bg-black/60 h-full h-100 flex flex-col items-center justify-center text-center text-white px-6 w-full py-8">
+        <div className="absolute inset-0 bg-black/50 h-full h-100 flex flex-col items-center justify-center text-center text-white px-6 w-full py-8">
            {title?
           <>
           <h1 className="text-4xl font-extrabold sm:text-4xl lg:text-5xl">
@@ -45,31 +45,14 @@ export default function Hero({title}) {
           </>:
           <>
 
-          <h1 className="text-3xl text-white font-extrabold  lg:text-5xl"> 
-        Building with <span className="text-primary"> Care.</span>
+          <h1 className="text-3xl font-extrabold  lg:text-5xl"> 
+        Building with <span className="text-white bg-neutral-800 rounded-sm px-2"> Care.</span>
           </h1>
-          <p className="mt-6 md:text-lg max-w-2xl mx-auto">
-            Strong foundations. Strong relationships.
+          <p className="mt-6 md:text-lg max-w-2xl mx-auto bg-neutral-900/70 rounded-xs">
+             Strong foundations. Strong relationships. 
           </p>
-
-                    <div className="mt-8 flex flex-col text-center items-center gap-4 justify-center md:flex-row">
-            <Link
-              href="/contact"
-              className="px-6 py-3 bg-primary-500 text-neutral-900 uppercase font-medium rounded-xs  hover:bg-primary-400 transition"
-            >
-              Enquire Now
-            </Link>
-            <Link
-              href="/services"
-              className="px-6 py-3 border border-white text-white uppercase font-medium rounded-xs  hover:bg-white hover:text-secondary-600 transition"
-            >
-              Learn More
-            </Link>
-          </div>
           
           </>}
-
-
         </div>
 
         {/* Carousel dots */}

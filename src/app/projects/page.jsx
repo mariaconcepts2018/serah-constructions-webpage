@@ -1,107 +1,75 @@
-import "@/app/globals.css";
+import FullscreenImageViewer from "@/components/FullscreenImageViewer";
 import Hero from "@/components/Hero";
-import ImageView from "@/components/FullScreenButton";
-import Image from "next/image";
-import FullScreenButton from "@/components/FullScreenButton";
 
-
-const data = [
-  {
-      id:"1",
-      title:"Built-in Furniture",
-      project:"Churchs",
-      imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994636/gallery_14_fu2uqp.avif",
+export default function GalleryPage() {
+  const images = [
+    {
+      src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      alt: "Modern Living Room",
     },
     {
-      id:"2",
-      title:"Building Construction",
-        project:"Residential",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994630/gallery_2_ga6bmb.avif",
-      },
-      {
-        id:"3",
-        title:"Interiors",
-        project:"Residential",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994631/gallery_3_kg2gof.avif",
-      },
-      {
-        id:"4",
-        title:"Renovation",
-        project:"Residential",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994631/gallery_4_jalacd.avif",
-      },
-      {
-        id:"5",
-        title:"Built-in Furniture",
-        project:"Residential",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994633/gallery_5_kfikux.avif",
-      },
-      {
-        id:"6",
-        title:"Built-in Furniture",
-        project:"Schools & colleges",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994633/gallery_6_d8zwov.avif",
-      },
-      {
-        id:"10",
-        title:"Built-in Furniture",
-        project:"Schools & colleges",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994634/gallery_10_dchyz1.avif",
-      },
-      {
-        id:"11",
-        title:"Built-in Furniture",
-        project:"Churchs",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994634/gallery_11_szeoul.avif",
-      },
-      {
-        id:"12",
-        title:"Built-in Furniture",
-        project:"Churchs",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994635/gallery_12_jh0ipf.avif",
-      },                   
-      {
-        id:"14",
-        title:"Project Management",
-        project:"Residential",
-        imgUrl:"https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994630/gallery_1_v36rhe.avif",
-      }
-    ]
-    
-    export const metadata = {
-      title: "Our Projects | Serah Constructions",
-    };
-    
-    export default function MyApp() {
-      
-      return (
-        <>
-      <main className="bg-neutral-800 text-neutral-100">
-        <>
-          <Hero title={'Projects'}/>
+      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      alt: "Cozy Bedroom",
+    },
+    {
+      src: "https://plus.unsplash.com/premium_photo-1661338863383-563eda764ea1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      alt: "Minimalist Kitchen",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+      alt: "Luxury Bathroom",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+      alt: "Office Workspace",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1593136596203-7212b076f4d2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      alt: "Dining Area",
+    },
+    {
+      src: "https://plus.unsplash.com/premium_photo-1679690708613-0d10282f9d19?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632",
+      alt: "Elegant Interior Design",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1637665746399-0d52d9816128?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      alt: "Modern Hallway",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      alt: "Balcony View",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1610084458740-61366d43b5cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      alt: "Artistic Decor",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1680",
+      alt: "Minimalist Office",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1661016630713-67e36bfc2285?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      alt: "Outdoor Lounge",
+    },
+  ];
 
- <div className="flex flex-col justify-center gap-4 mx-auto max-w-7xl p-8">            
-            <div>
-                    <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-evenly">
-                        {data && data.map((item, i) => (
-                        <FullScreenButton className={'basis-1/2 md:basis-1/6'} key={i} src={item.imgUrl} alt={item.title} >
-                          <Image className="max-w-80 h-80 object-cover border border-secondary"  width={400} height={300} src={item.imgUrl} alt={item.title}/>
-                        </FullScreenButton>
-                        ))}
-                    </div>
-                    <br/>
-                </div>
+  return (
+    <>
+      <Hero title={"Our Gallery"} />
 
-            <div>
-
-            </div>
-          
-          </div>
-
-        </>
-      </main>
-
-      <ImageView />
+      <div className="min-h-screen bg-neutral-800">
+        <h1 className="text-2xl text-center py-6">Image Gallery</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+          {images.map((img, i) => (
+            <FullscreenImageViewer
+              key={i}
+              index={i}
+              image={img}
+              images={images}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 }

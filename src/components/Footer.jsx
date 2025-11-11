@@ -9,19 +9,19 @@ import { Email, Facebook, Instagram, Location, Phone, Pinterest, Youtube } from 
 export default function Footer() {
 
   return (
-      <footer  className="w-full bg-neutral-900 pt-12">
+      <footer  className="w-full bg-neutral-900 border-t border-neutral-700 pt-12 pb-18 lg:pb-0">
   <div  className="w-full px-4 mx-auto max-w-7xl">
     <div  className="flex flex-col md:flex-row justify-between gap-4 md:grid-cols-2">
           <Link href="/">
 
-          <Logo className="w-24 md:w-40 mx-auto md:ml-0 mb-6 md:mb-0" />
+          <Logo className="w-24 md:w-30 mx-auto md:ml-0 mb-6 md:mb-0" />
           {/* <Image  src="/serah-logo.svg" height={200} width={200} alt="logo" /> */}
           </Link>
 
       
 <div>
 
-      <div className="flex flex-col md:gap-x-16 justify-evenly items-left gap-4 text-neutral-200">
+      <div className="flex flex-col  md:gap-x-16 justify-evenly items-left gap-4 text-neutral-200">
         <div className="flex items-center gap-4 items-start">
             <div>
 
@@ -65,7 +65,6 @@ contact@serahconstructions.com
 
         <div className="flex items-center gap-4 text-neutral-200 items-start">
             <div >
-
             <Location className="w-7 mt-2" />
             </div>
             <div>
@@ -80,6 +79,7 @@ Office Address
             </  div>
 </div>
     </div>
+<GoogleMap />
     <div  className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-neutral-200 md:flex-row md:justify-between">
       <p  className="mb-4 text-sm text-center text-neutral-200 md:mb-0">
         Copyright © 2024 Serah Constructions. <br />

@@ -2,7 +2,8 @@ import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Righteous } from 
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import WhatsApp from "@/components/WhatsApp";
+import BottomNavbar from "@/components/BottomNavbar";
+import PopupButtons from "@/components/PopupButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,8 @@ export default function RootLayout({ children }) {
       <Navbar />
         {children}
       <Footer/>
-      <WhatsApp />
+      <PopupButtons />
+      <BottomNavbar />
       </body>
     </html>
   );

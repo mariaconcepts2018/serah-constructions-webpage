@@ -1,189 +1,414 @@
-'use client'
-import { useState } from "react";
+"use client";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Close, Success16 } from "../icons/Svg";
+import HomeTypeForm from "./HomeTypeForm";
+import LayoutForm from "./LayoutForm";
+import ServiceTypeForm from "./ServiceTypeForm";
+import ServicesForm from "./ServicesForm";
+import FloorsForm from "./FloorsForm";
 
-const projects = [
-  {
-    title: 'Construction'
-  },
-    {
-    title: 'Interiors'
-  },
-    {
-    title: 'Renovation'
-  },
-  
-]
+export default function ContactForm({ setOpen }) {
+  const formStepLocal = Number(
+    typeof window !== "undefined" ?? localStorage.getItem("form-step")
+  );
+  const [step, setStep] = useState(formStepLocal ? formStepLocal : 1);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    leadSource: "website",
+    code: "",
+    location: "",
+    service: "",
+  });
 
-export default function ContactForm({ Component, pageProps }) {
-    
-  const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", budget:"", project:"" });
-  const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const inputsRef = useRef([]);
 
-    function validate() {
-    const e = {};
-    if (!form.name.trim()) e.name = "Name is required.";
-    if (!form.email.trim()) e.email = "Email is required.";
-    if (!form.phone.trim()) e.phone = "Phone number is required.";
-    if (!form.project.trim()) e.project = "Project type is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Enter a valid email.";
-    return e;
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    async function handleSubmit(ev) {
-    ev.preventDefault();
-    setErrors({});
-    const e = validate();
-    if (Object.keys(e).length) {
-      setErrors(e);
-      return;
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    //send OTP
+    // try {
+    //   const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`, { // Replace with your API route
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //     body: new URLSearchParams({phone : formData.phone}),
+    //   })
+
+    //   if (!response.ok) {
+    //     throw new Error('Failed to send OTP.')
+    //   }
+
+    //   const result = await response.json()
+    // console.log('OTP sent successful:', result)
+    localStorage.setItem("form-step", 2);
+    setStep(2);
+
+    setMessage("An OTP has been sent to your mobile number.");
+    //       } catch (error) {
+    //         console.error('Error sending OTP:', error)
+    //         // Handle error (e.g., show error message)
+    //       }
+  };
+
+  const handleOtpChange = (value, index) => {
+    if (!/^[0-9]?$/.test(value)) return; // Only numbers
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // Auto-focus next input
+    if (value && index < 3) {
+      inputsRef.current[index + 1].focus();
     }
+  };
 
-    setStatus({ loading: true, ok: null, msg: "" });
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      inputsRef.current[index - 1].focus();
+    }
+  };
 
+  const handleVerify = async (e) => {
+    e.preventDefault(); // Prevent default form submission
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const code = otp.join("");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/verify-otp`,
+        {
+          // Replace with your API route
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({ ...formData, code: code }),
+        }
+      );
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Something went wrong");
+      if (!response.ok) {
+        throw new Error("Failed to verify OTP.");
+      }
 
-      setForm({ name: "", email: "", message: "" });
-      setStatus({ loading: false, ok: true, msg: data?.message || "Message sent!" });
-    } catch (err) {
-      setStatus({ loading: false, ok: false, msg: err.message || "Failed to send" });
+      const result = await response.json();
+      console.log("OTP verified successful:", result);
+
+      setMessage("Your number has been verified successfully");
+
+      localStorage.setItem("form-step", 3);
+      setStep(3);
+
+      setOtp(["", "", "", ""]);
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      setError("Error verifying phone number");
+      // Handle error (e.g., show error message)
     }
-  }
+  };
+
+  const progress = (step / 8) * 100;
 
   return (
     <>
-
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto md:p-6">
-
-      <div className="flex flex-row flex-wrap justify-around">
-
-
-      <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Name</span>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className={`mt-1 block w-full  autofill:bg-neutral-700 border px-3 py-2 bg-neutral-700 focus:outline-none focus:ring ${
-            errors.name ? "border-red-300 focus:ring-red-300" : "border-none focus:ring-primary"
-          }`}
-          aria-invalid={errors.name ? "true" : "false"}
-          aria-describedby={errors.name ? "name-error" : undefined}
+      <div className="flex flex-row flex-nowrap items-center justify-between mb-6 gap-x-6 md:gap-x-6">
+        <div className="w-full bg-neutral-700 rounded-full h-1">
+          <motion.div
+            className="bg-primary-500 h-1 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.4 }}
           />
-        {errors.name && <p id="name-error" className="mt-1 text-xs text-red-300">{errors.name}</p>}
-      </label>
-
-            <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Phone Number</span>
-        <input
-          type="phone"
-          name="phone"
-          value={form.phone}
-          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          className={`mt-1 block w-full   border px-3 py-2 bg-neutral-700 focus:outline-none focus:ring ${
-            errors.phone ? "border-red-300 focus:ring-red-300" : "border-none focus:ring-primary"
-          }`}
-          aria-invalid={errors.phone ? "true" : "false"}
-          aria-describedby={errors.phone ? "phone-error" : undefined}
-          />
-        {errors.phone && <p id="phone-error" className="mt-1 text-xs text-red-300">{errors.phone}</p>}
-      </label>
-
-      <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Email</span>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className={`mt-1 block w-full   border px-3 py-2 bg-neutral-700 focus:outline-none focus:ring ${
-            errors.email ? "border-red-300 focus:ring-red-300" : "border-none focus:ring-primary"
-          }`}
-          aria-invalid={errors.email ? "true" : "false"}
-          aria-describedby={errors.email ? "email-error" : undefined}
-          />
-
-        {errors.email && <p id="email-error" className="mt-1 text-xs text-red-300">{errors.email}</p>}
-      </label>
-
-      <label htmlFor="service" className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Select Project Budget &#40;optional&#41;</span>
-
-      <select
-        id="service"
-        name="service"
-        defaultValue={""}
-        onChange={(e) => setForm({ ...form, budget: e.target.value })}
-        className={`mt-1 block w-full   border px-3 py-2.5 bg-neutral-700 focus:outline-none focus:ring ${
-            errors.budget ? "border-red-300 focus:ring-red-300" : "border-none focus:ring-primary"
-          }`}
-        >
-        <option value="" hidden={true} disabled={true} className="buton cursor-not-allowed">Choose an option</option>
-        <option value="1">upto 10 Lakhs</option>
-        <option value="2">10 - 25 Lakhs</option>
-        <option value="3">25 - 50 Lakhs</option>
-        <option value="4">More than 50 Lakhs</option>
-      </select>
-        {errors.project && <p id="email-error" className="mt-1 text-xs text-red-300">{errors.email}</p>}
-        </label>
-
-
-      <label className="block mb-4 basis-full p-2">
-        <span className="text-sm">Project</span>
-<div className="flex gap-2  mt-2 justify-start md:justify-between">
-{projects.map((item, index) => (
-  <div key={index} className="group w-full basis-1/4 md:basis-1/2 cursor-pointer bg-neutral-700 shadow-sm">
-        <button  type="button"
-        onClick={() => setForm({ ...form, project: item.title })} className={` ${form.project === item.title? 'ring ring-primary' :'ring-none'} transition rounded-xs w-full group-hover:bg-neutral-600`}>
-          <div className="p-2 px-3">
-            <p className="text-neutral-100 text-center">
-              {item.title}
-            </p>
-          </div>
-        </button>
-</div>
-))}
-</div>
-        {errors.project && <p id="email-error" className="mt-1 text-xs text-red-300">{errors.project}</p>}
-
-      </label>
-
-      <label className="block mb-4 basis-full p-2">
-        <span className="text-sm">Message &#40;optional&#41;</span>
-        <textarea
-          name="message"
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          rows="5"
-          className={`mt-1 block w-full   border px-3 py-2 bg-neutral-700 focus:outline-none focus:ring ${
-            errors.message ? "border-red-300 focus:ring-red-300" : "border-none focus:ring-primary"
-          }`}
-          />
-      </label>
-          </div>
-      <div className="flex items-center gap-3 p-2">
+        </div>
         <button
-          type="submit"
-          disabled={status.loading}
-          className="inline-flex items-center justify-center   px-4 py-2 bg-primary-500 text-neutral-800 font-medium uppercase shadow hover:bg-primary-400 disabled:opacity-60"
+          className="cursor-pointer rounded-full w-5 h-5 bg-neutral-700 "
+          onClick={() => setOpen(false)}
         >
-          {status.loading ? "Submitting..." : "Submit"}
+          <Close className="text-neutral-500 w-5 h-5" />
         </button>
-
-        {status.ok === true && <p className="text-sm text-green-700">{status.msg}</p>}
-        {status.ok === false && <p className="text-sm text-red-300">{status.msg}</p>}
       </div>
-    </form>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={step}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -15 }}
+          transition={{ duration: 0.3 }}
+        >
+          <form method="post" onSubmit={handleSubmit}>
+            {/* Step 1 - User Details */}
+            {step === 1 && (
+              <div className="space-y-4">
+                <h2 className="text-xl  text-center">Enter Your Details</h2>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full bg-neutral-700 p-2 focus:ring focus:ring-primary-500 outline-none"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full bg-neutral-700 p-2  focus:ring focus:ring-primary-500 outline-none"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full bg-neutral-700 p-2 focus:ring focus:ring-primary-500 outline-none"
+                />
+
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Home or Site Location"
+                  value={formData.location}
+                  onChange={handleChange}
+                  className="w-full bg-neutral-700 p-2 focus:ring focus:ring-primary-500 outline-none"
+                />
+
+                <button
+                  type="submit"
+                  disabled={
+                    !formData.name || !formData.phone || !formData.email
+                  }
+                  className={`w-full py-2 transition ${
+                    formData.name &&
+                    formData.phone &&
+                    /\S+@\S+\.\S+/.test(formData.email)
+                      ? "bg-primary-500 text-neutral-800 hover:bg-primary-400  cursor-pointer"
+                      : "bg-neutral-500 text-neutral-100 cursor-not-allowed"
+                  }`}
+                >
+                  Get OTP
+                </button>
+              </div>
+            )}
+          </form>
+
+          {/* Step 2 - OTP Verification */}
+          <form method="post" onSubmit={handleVerify}>
+            {step === 2 && (
+              <div className="space-y-4 text-center">
+                <h2 className="text-xl  text-center">Verify OTP</h2>
+                <p className="text-sm">
+                  Enter the 4-digit OTP sent to your phone.
+                </p>
+
+                <div className="flex justify-center gap-3">
+                  {otp.map((digit, i) => (
+                    <input
+                      key={i}
+                      type="number"
+                      maxLength="1"
+                      value={digit}
+                      onChange={(e) => handleOtpChange(e.target.value, i)}
+                      onKeyDown={(e) => handleKeyDown(e, i)}
+                      ref={(el) => (inputsRef.current[i] = el)}
+                      className="w-10 h-10 text-center text-xl bg-neutral-700 rounded focus:ring focus:ring-primary-500 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!otp.join("")}
+                  className={`w-full py-2 transition ${
+                    otp.join("").length === 4
+                      ? "bg-primary-500 text-neutral-800 hover:bg-primary-400 cursor-pointer"
+                      : "bg-gray-300 text-neutral-600 cursor-not-allowed"
+                  }`}
+                >
+                  Verify OTP
+                </button>
+
+                <button
+                  onClick={() => setStep(1)}
+                  className="text-sm underline mt-2 cursor-pointer"
+                >
+                  ← Edit Details
+                </button>
+              </div>
+            )}
+          </form>
+
+          {step === 3 && (
+            <ServiceTypeForm
+              setStep={setStep}
+              setMessage={setMessage}
+              setError={setError}
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+          {step === 4 && (
+            <HomeTypeForm
+              setStep={setStep}
+              setMessage={setMessage}
+              setError={setError}
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+          {step === 5 && (
+            <FloorsForm
+              setStep={setStep}
+              setMessage={setMessage}
+              setError={setError}
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+
+          {step === 6 && (
+            <LayoutForm
+              setStep={setStep}
+              setMessage={setMessage}
+              setError={setError}
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+
+          {step === 7 && (
+            <ServicesForm
+              setStep={setStep}
+              setMessage={setMessage}
+              setError={setError}
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+          {step === 8 && (
+            <div className="space-y-4">
+              <h2 className="text-xl text-neutral-100 text-center">
+                Completed..!
+              </h2>
+              <div className="flex flex-col p-2 gap-4 bg-neutral-100/25 items-center mt-8">
+                <Success16 className="w-8 h-8 text-green-600" />
+                <div>
+                  <p className="p-2 text-center mb-4">
+                    Your details have been saved. We will contact you soon.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Step Indicator */}
+      {step !== 8 && (
+        <p className="text-sm mt-4 text-center">Step {step} of 7</p>
+      )}
+
+      <div
+        role="alert"
+        className={`${message && "hidden"} ${
+          error ? "opacity-100" : "opacity-0"
+        } transition-all mt-3 relative flex w-full p-2 text-sm text-red-400 border border-red-400 rounded-md justify-between items-center`}
+      >
+        <div className="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="h-5 w-5 mr-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+            ></path>
+          </svg>
+          {error}
+        </div>
+        <button
+          className=" transition-all cursor-pointer"
+          type="button"
+          onClick={() => setError(null)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="h-5 w-5"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      {message && (
+        <div
+          role="alert"
+          className={`${
+            message ? "opacity-100" : "opacity-0"
+          } transition-all mt-3 relative flex w-full p-2 text-sm text-neutral-800 border border-neutral-800 rounded-md justify-between items-center`}
+        >
+          <div className="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="h-5 w-5 mr-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              ></path>
+            </svg>
+            {message}
+          </div>
+          <button
+            className=" transition-all cursor-pointer"
+            type="button"
+            onClick={() => setMessage(null)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-5 w-5"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      )}
     </>
   );
 }
