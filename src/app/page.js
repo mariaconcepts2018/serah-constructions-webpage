@@ -4,12 +4,54 @@ import Image from "next/image";
 import Link from "next/link";
 import HoverCard from "@/components/HoverCard";
 import { About, Check, Eye, GoalsFill, Phone } from "@/icons/Svg";
+import getCloudinaryUrl from "@/lib/cloudinary";
 
 export const metadata = {
-  title: "Home | Serah Constructions",
+  title: "Serah Constructions - Building Together",
+
+  description:
+    "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
+  keywords: [
+    "construction",
+    "renovation",
+    "architecture",
+    "interior design",
+    "home building",
+  ],
+  authors: [{ name: "Serah Constructions" }],
+  openGraph: {
+    title:
+      "Serah Constructions – Best Interiors and Constructions in Bengaluru",
+    description:
+      "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
+    url: "https://serahconstructions.com",
+    siteName: "Serah Constructions",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp",
+        width: 1200,
+        height: 630,
+        alt: "Serah - Construction Services",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maria Concepts – Best Interiors and Constructions in Bengaluru",
+    description:
+      "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
+    images: [
+      "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp",
+    ],
+  },
+  alternates: {
+    canonical: "https://serahconstructions.com",
+  },
 };
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({}) {
   return (
     <>
       <Hero />
@@ -83,7 +125,11 @@ export default function MyApp({ Component, pageProps }) {
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
-                  300+ Projects of Experience
+                  5+ Years in Business
+                </div>
+                <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
+                  <Check className="w-4 h-4" />
+                  50+ completed projects
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
@@ -98,7 +144,7 @@ export default function MyApp({ Component, pageProps }) {
             <h2 className="text-2xl text-primary-500 text-center pt-12">
               Our Services
             </h2>
-            <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly gap-y-4 md:gap-y-16 gap-x-2 md:max-w-4xl md:mx-auto pt-4 pb-8 text-primary-300">
+            <div className="flex flex-col md:flex-row md:flex-nowrap justify-evenly gap-y-4 md:gap-y-16 gap-x-2 md:max-w-4xl md:mx-auto pt-4 pb-8 text-primary-300">
               <HoverCard />
             </div>
 
@@ -134,7 +180,7 @@ export default function MyApp({ Component, pageProps }) {
                 <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
                     className="w-full rounded-xs"
-                    src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994633/island-kitchen-edited_j0wjzo.avif"
+                    src={getCloudinaryUrl("island-kitchen-edited_j0wjzo")}
                     width={400}
                     height={300}
                     alt="island kitchen"
@@ -143,7 +189,7 @@ export default function MyApp({ Component, pageProps }) {
                 <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
                     className="w-full rounded-xs"
-                    src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994633/building_yl6fok.avif"
+                    src={getCloudinaryUrl("building_yl6fok")}
                     width={400}
                     height={300}
                     alt="building"
@@ -152,7 +198,7 @@ export default function MyApp({ Component, pageProps }) {
                 <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
                     className="w-full rounded-xs"
-                    src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994630/kitchen-16_9_witsu2.avif"
+                    src={getCloudinaryUrl("kitchen-16_9_witsu2")}
                     width={400}
                     height={300}
                     alt="building"
@@ -161,7 +207,7 @@ export default function MyApp({ Component, pageProps }) {
                 <div className="w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
                     className="w-full rounded-xs"
-                    src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761994633/office_hgenhz.avif"
+                    src={getCloudinaryUrl("office_hgenhz")}
                     width={400}
                     height={300}
                     alt="building"

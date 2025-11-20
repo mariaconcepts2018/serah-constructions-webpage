@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import Hero from "@/components/Hero";
+import getCloudinaryUrl from "@/lib/cloudinary";
 import Image from "next/image";
 
 export const metadata = {
@@ -11,57 +12,49 @@ const data = [
     title: "Constructions",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=779",
+    imgUrl: getCloudinaryUrl("photo-1508450859948-4e04fabaa4ea_xqhhcy"),
   },
   {
     title: "Project Management",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1677078610588-aed2834ad968?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1176",
+    imgUrl: getCloudinaryUrl("photo-1677078610588-aed2834ad968_rwi96h"),
   },
   {
     title: "Interior Design",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1664711942326-2c3351e215e6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1117",
+    imgUrl: getCloudinaryUrl("photo-1664711942326-2c3351e215e6_vuzdqt"),
   },
   {
     title: "Renovation",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1674649207083-281c2517ab49?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    imgUrl: getCloudinaryUrl("photo-1674649207083-281c2517ab49_vct2kb"),
   },
   {
     title: "Custom Furnitures",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    imgUrl: getCloudinaryUrl("photo-1540574163026-643ea20ade25_rpcvjy"),
   },
   {
     title: "Institution and Church Works",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1667489010867-a7a46e76faee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    imgUrl: getCloudinaryUrl("photo-1667489010867-a7a46e76faee_emx3r3"),
   },
   {
     title: "Residentials",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174",
+    imgUrl: getCloudinaryUrl("photo-1664711942326-2c3351e215e6_vuzdqt"),
   },
   {
     title: "Office Spaces",
     description:
       "Our skilled project managers oversee every phase of constructions and interiors in Bengaluru, ensuring that each project is completed on schedule, within budget, and to the highest standards of quality and craftsmanship.",
-    imgUrl:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169",
+    imgUrl: getCloudinaryUrl("photo-1497366754035-f200968a6e72_akhsqa"),
   },
 ];
 
@@ -70,7 +63,7 @@ export default function MyApp() {
     <>
       <Hero title={"Our Services"} />
       <main className=" px-4 xl:px-8 py-12 mx-auto w-full bg-neutral-800 text-neutral-100">
-        <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly items-center pt-4 pb-4 gap-2 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly items-center pt-4 pb-4 lg:px-24 gap-2 max-w-8xl mx-auto">
           {data.map((item, index) => (
             <div
               key={index}
