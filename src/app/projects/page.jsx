@@ -64,7 +64,7 @@ export default function GalleryPage() {
 
       <div className="min-h-screen bg-neutral-800">
         <h1 className="text-2xl text-center py-6">Image Gallery</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:w-1/2 md:mx-auto gap-4 p-4">
           {images.map((img, i) => (
             <FullscreenImageViewer
               key={i}

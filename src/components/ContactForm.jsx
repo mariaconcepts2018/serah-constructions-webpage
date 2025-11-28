@@ -18,6 +18,7 @@ export default function ContactForm({ setOpen }) {
     phone: "",
     email: "",
     leadSource: "website",
+    company: "serahconstruction",
     code: "",
     location: "",
     service: "",
@@ -191,7 +192,8 @@ export default function ContactForm({ setOpen }) {
                   className={`w-full py-2 transition ${
                     formData.name &&
                     formData.phone &&
-                    /\S+@\S+\.\S+/.test(formData.email)
+                    /\S+@\S+\.\S+/.test(formData.email) &&
+                    formData.location
                       ? "bg-primary-500 text-neutral-800 hover:bg-primary-400  cursor-pointer"
                       : "bg-neutral-500 text-neutral-100 cursor-not-allowed"
                   }`}
