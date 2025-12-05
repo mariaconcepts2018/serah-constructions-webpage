@@ -8,12 +8,13 @@ cloudinary.config({
 });
 
 const getCloudinaryUrl = (publicId, options = {}) => {
+  const { aspect_ratio } = options;
   return cloudinary.url(publicId, {
     fetch_format: "auto", // f_auto
-    quality: "auto", // q_auto
+    quality: "auto", //aspect_ratio ? "50" : "auto", // q_auto
     dpr: "auto", // dpr_auto
     width: "auto", // w_auto
-    crop: "scale", // c_scale
+    crop: aspect_ratio ? "crop" : "scale", // c_scale
     responsive: true, // auto breakpoints
     ...options,
   });

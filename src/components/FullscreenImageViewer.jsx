@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import React, { useState } from "react";
 const FullscreenModal = dynamic(() => import("./FullscreenModal"));
 
@@ -16,12 +17,14 @@ export default function FullscreenImageViewer({ images, image, index }) {
     <>
       {/* Image Card */}
       <div onClick={openFullscreen} className="relative group cursor-pointer">
-        <img
+        <Image
           src={image.src}
           alt={image.alt}
-          className="w-full h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
+          width={300}
+          height={300}
+          className="w-48 h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-0 h-full bg-black/50 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition">
+        <div className="w-48 h-48 rounded-md absolute inset-0 h-full bg-black/50 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition">
           Click to view
         </div>
       </div>

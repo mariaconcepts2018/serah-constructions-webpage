@@ -36,29 +36,36 @@ export default function ContactForm({ setOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
     //send OTP
-    // try {
-    //   const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`, { // Replace with your API route
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/x-www-form-urlencoded',
-    //     },
-    //     body: new URLSearchParams({phone : formData.phone}),
-    //   })
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`,
+        {
+          // Replace with your API route
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            phone: formData.phone,
+            company: formData.company,
+          }),
+        }
+      );
 
-    //   if (!response.ok) {
-    //     throw new Error('Failed to send OTP.')
-    //   }
+      if (!response.ok) {
+        throw new Error("Failed to send OTP.");
+      }
 
-    //   const result = await response.json()
-    // console.log('OTP sent successful:', result)
-    localStorage.setItem("form-step", 2);
-    setStep(2);
+      const result = await response.json();
+      console.log("OTP sent successful:", result);
+      localStorage.setItem("form-step", 2);
+      setStep(2);
 
-    setMessage("An OTP has been sent to your mobile number.");
-    //       } catch (error) {
-    //         console.error('Error sending OTP:', error)
-    //         // Handle error (e.g., show error message)
-    //       }
+      setMessage("An OTP has been sent to your mobile number.");
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+      // Handle error (e.g., show error message)
+    }
   };
 
   const handleOtpChange = (value, index) => {

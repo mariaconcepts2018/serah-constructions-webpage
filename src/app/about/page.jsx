@@ -7,11 +7,13 @@ export const metadata = {
 };
 
 export default function MyApp({ Component, pageProps }) {
+  const heroSrc = getCloudinaryUrl("HERO-serah_gfmweo");
+
   return (
     <>
       <main className="bg-neutral-800 text-neutral-100">
         <>
-          <Hero title={"Get to know us"} />
+          <Hero title={"Get to know us"} src={heroSrc} />
 
           <h2 className="text-3xl text-center mt-12 text-primary-500">
             About Us

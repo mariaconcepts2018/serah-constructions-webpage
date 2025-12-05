@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 export default function FullscreenModal({
@@ -95,10 +96,12 @@ export default function FullscreenModal({
         onMouseLeave={endDrag}
         onDoubleClick={resetZoom}
       >
-        <img
+        <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          className="max-h-full max-w-full transition-transform duration-150 ease-in-out"
+          width={1080}
+          height={920}
+          className="h-auto w-full md:h-full md:w-auto transition-transform duration-150 ease-in-out"
           style={{
             transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`,
           }}
@@ -107,10 +110,13 @@ export default function FullscreenModal({
 
       <div className="flex justify-center gap-2 overflow-x-auto p-3 bg-black/60 border-t border-white/10">
         {images.map((img, i) => (
-          <img
+          <Image
             key={i}
             src={img.src}
             alt={img.alt || ""}
+            width={100}
+            height={100}
+            fetchPriority="high"
             onClick={() => setCurrentIndex(i)}
             className={`h-16 w-auto rounded-md cursor-pointer object-cover ${
               i === currentIndex ? "ring-2 ring-white" : ""

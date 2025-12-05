@@ -9,62 +9,151 @@ export const metadata = {
 export default function GalleryPage() {
   const images = [
     {
-      src: getCloudinaryUrl("photo-1505691938895-1758d7feb511_dqje6f"),
-      alt: "Modern Living Room",
+      src: getCloudinaryUrl("gallery_14_fu2uqp"),
+      alt: "Grotto",
     },
     {
       src: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z"),
-      alt: "Cozy Bedroom",
+      alt: "3d Visualization",
     },
     {
-      src: getCloudinaryUrl("premium_photo-1661338863383-563eda764ea1_zyvibk"),
-      alt: "Minimalist Kitchen",
+      src: getCloudinaryUrl("1000238398_cdideo"),
+      alt: "Warm and elegant vanity unit with storage",
+    },
+
+    {
+      src: getCloudinaryUrl("BPII9215_ped48s"),
+      alt: "Kids bedroom",
     },
     {
-      src: getCloudinaryUrl("photo-1560448204-e02f11c3d0e2_euufem"),
-      alt: "Luxury Bathroom",
+      src: getCloudinaryUrl("photo-1505691938895-1758d7feb511_dqje6f"),
+      alt: "False ceiling",
     },
     {
-      src: getCloudinaryUrl("photo-1519710164239-da123dc03ef4_aotab1"),
-      alt: "Office Workspace",
+      src: getCloudinaryUrl("IMG-20251017-WA0017_sk0jzr"),
+      alt: "Comfy sitout",
     },
     {
-      src: getCloudinaryUrl("photo-1593136596203-7212b076f4d2_yssxj7"),
-      alt: "Dining Area",
+      src: getCloudinaryUrl("1000382545_mgyilk"),
+      alt: "Glass panneling",
     },
     {
-      src: getCloudinaryUrl("premium_photo-1679690708613-0d10282f9d19_zxmk69"),
-      alt: "Elegant Interior Design",
+      src: getCloudinaryUrl("Photo_3d_visual_lgqmkw"),
+      alt: "Balcony",
     },
     {
-      src: getCloudinaryUrl("photo-1637665746399-0d52d9816128_ctsqkq"),
-      alt: "Modern Hallway",
+      src: getCloudinaryUrl("WZXY3953_zcp5my"),
+      alt: "Building Exteriors",
+    },
+
+    {
+      src: getCloudinaryUrl("FBZF7418_ya2fkd"),
+      alt: "Grotto",
     },
     {
-      src: getCloudinaryUrl("photo-1505691938895-1758d7feb511_1_l8yibr"),
-      alt: "Balcony View",
+      src: getCloudinaryUrl("PDTH8875_m3xhhg"),
+      alt: "3d Visualization",
     },
     {
-      src: getCloudinaryUrl("photo-1610084458740-61366d43b5cf_ehgzfn"),
-      alt: "Artistic Decor",
+      src: getCloudinaryUrl("DPVS7540_us0cnf"),
+      alt: "Grotto",
     },
     {
-      src: getCloudinaryUrl("photo-1718220216044-006f43e3a9b1_bqspek"),
-      alt: "Minimalist Office",
+      src: getCloudinaryUrl("EGDQ3065_rulzcw"),
+      alt: "3d Visualization",
     },
     {
-      src: getCloudinaryUrl("photo-1661016630713-67e36bfc2285_otxgtd"),
-      alt: "Outdoor Lounge",
+      src: getCloudinaryUrl("WSAV5469_hy4gtx"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("OUMK7387_ztxsix"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("TSQB8131_nzucio"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("UYRI1358_eguvgf"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("TASN5894_xb1uii"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("RNRA9126_az04xd"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("FBZF7418_ya2fkd"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("PGSQ2308_jucej1"),
+
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("UXDG6435_gxw2o9"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("ESFO9150_vzwysq"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("IMG_4440_v1crnt"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("THMA9754_drvzux"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("BJPH7884_aubcfb"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("BRJY9743_tyhbpr"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("AFPP3467_y5v92w"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("ASYE8945_fgiky2"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("HIZV7179_hdpnpa"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("IMG_4439_qjxtoz"),
+      alt: "3d Visualization",
+    },
+    {
+      src: getCloudinaryUrl("DKQE4292_izcrgl"),
+      alt: "Grotto",
+    },
+    {
+      src: getCloudinaryUrl("QWYG0595_hilcad"),
+      alt: "3d Visualization",
     },
   ];
 
+  const heroSrc = getCloudinaryUrl("HERO-serah_gfmweo");
+
   return (
     <>
-      <Hero title={"Our Portfolio"} />
+      <Hero title={"Our Portfolio"} src={heroSrc} />
 
       <div className="min-h-screen bg-neutral-800">
         <h1 className="text-2xl text-center py-6">Image Gallery</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:w-1/2 md:mx-auto gap-4 p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:w-3/4 lg:w-1/2 md:mx-auto gap-4 p-4">
           {images.map((img, i) => (
             <FullscreenImageViewer
               key={i}

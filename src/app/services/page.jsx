@@ -59,9 +59,11 @@ const data = [
 ];
 
 export default function MyApp() {
+  const heroSrc = getCloudinaryUrl("HERO-serah_gfmweo");
+
   return (
     <>
-      <Hero title={"Our Services"} />
+      <Hero title={"Our Services"} src={heroSrc} />
       <main className=" px-4 xl:px-8 py-12 mx-auto w-full bg-neutral-800 text-neutral-100">
         <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly items-center pt-4 pb-4 lg:px-24 gap-2 max-w-8xl mx-auto">
           {data.map((item, index) => (

@@ -52,9 +52,10 @@ export const metadata = {
 };
 
 export default function MyApp({}) {
+  const heroSrc = getCloudinaryUrl("HERO-serah_gfmweo");
   return (
     <>
-      <Hero />
+      <Hero src={heroSrc} />
       <main className="bg-neutral-800 text-neutral-100 px-2 md:px-4 xl:px-0 ">
         <>
           <div className=" mx-auto text-gray-100">
@@ -171,45 +172,49 @@ export default function MyApp({}) {
               </Link>
             </div>
 
-            <div className="w-full max-w-7xl mx-auto text-center text-neutral-100 mt-12 pb-12">
+            <div className="w-full max-w-6xl mx-auto text-center text-neutral-100 mt-12 pb-12">
               <h2 className="text-2xl text-primary text-center pt-12 pb-4">
                 Our Portfolio
               </h2>
 
               <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-center mb-8 md:gap-8">
+                <div className="w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
+                  <Image
+                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
+                    src={getCloudinaryUrl(
+                      "photo-1600585154340-be6161a56a0c_tjam6z"
+                    )}
+                    width={400}
+                    height={500}
+                    alt="building"
+                  />
+                </div>
                 <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
-                    className="w-full rounded-xs"
-                    src={getCloudinaryUrl("island-kitchen-edited_j0wjzo")}
+                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
+                    src={getCloudinaryUrl(
+                      "photo-1505691938895-1758d7feb511_dqje6f"
+                    )}
                     width={400}
-                    height={300}
+                    height={500}
+                    alt="building"
+                  />
+                </div>
+                <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
+                  <Image
+                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
+                    src={getCloudinaryUrl("UXDG6435_gxw2o9")}
+                    width={400}
+                    height={500}
                     alt="island kitchen"
                   />
                 </div>
                 <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
                   <Image
-                    className="w-full rounded-xs"
-                    src={getCloudinaryUrl("building_yl6fok")}
+                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
+                    src={getCloudinaryUrl("WZXY3953_zcp5my")}
                     width={400}
-                    height={300}
-                    alt="building"
-                  />
-                </div>
-                <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs"
-                    src={getCloudinaryUrl("kitchen-16_9_witsu2")}
-                    width={400}
-                    height={300}
-                    alt="building"
-                  />
-                </div>
-                <div className="w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs"
-                    src={getCloudinaryUrl("office_hgenhz")}
-                    width={400}
-                    height={300}
+                    height={500}
                     alt="building"
                   />
                 </div>

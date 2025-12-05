@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero({title}) {
-
+export default function Hero({ title, src }) {
   // Auto-slide every 5 seconds
   // useEffect(() => {
   //   const timer = setInterval(() => {
@@ -24,35 +24,41 @@ export default function Hero({title}) {
               index === current ? "opacity-100" : "opacity-0"
             }`}
           > */}
-            <img
-              // src={src}
-              src={'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070'}
-              alt={`Slide ${ 1}`}
-              className="w-full h-full object-cover"
-            />
-            {/* Dark overlay */}
-          {/* </div> */}
+        <Image
+          src={src}
+          alt="hero image"
+          width={1920}
+          height={1080}
+          priority
+          fetchPriority="high"
+          className="h-full w-auto md:h-auto md:w-full object-cover"
+        />
+        {/* Dark overlay */}
+        {/* </div> */}
         {/* ))} */}
 
         {/* Hero content */}
-        <div className="absolute inset-0 bg-black/50 h-full h-100 flex flex-col items-center justify-center text-center text-white px-6 w-full py-8">
-           {title?
-          <>
-          <h1 className="text-4xl font-extrabold sm:text-4xl lg:text-5xl">
-            {title}
-          </h1>
-          
-          </>:
-          <>
-
-          <h1 className="text-3xl font-extrabold  lg:text-5xl"> 
-        Building with <span className="text-white bg-neutral-800 rounded-sm px-2"> Care.</span>
-          </h1>
-          <p className="mt-6 md:text-lg max-w-2xl mx-auto bg-neutral-900/70 rounded-xs">
-             Strong foundations. Strong relationships. 
-          </p>
-          
-          </>}
+        <div className="absolute inset-0 bg-black/60 h-full h-100 flex flex-col items-center justify-center text-center text-white px-6 w-full py-8">
+          {title ? (
+            <>
+              <h1 className="text-4xl font-extrabold sm:text-4xl lg:text-5xl">
+                {title}
+              </h1>
+            </>
+          ) : (
+            <>
+              <h1 className="text-3xl font-extrabold  lg:text-5xl">
+                Building with{" "}
+                <span className="text-white bg-neutral-800 rounded-sm px-2">
+                  {" "}
+                  Care.
+                </span>
+              </h1>
+              <p className="mt-6 md:text-lg max-w-2xl mx-auto bg-neutral-900/70 rounded-xs">
+                Strong foundations. Strong relationships.
+              </p>
+            </>
+          )}
         </div>
 
         {/* Carousel dots */}
