@@ -31,7 +31,7 @@ export default function Hero({ title, src }) {
           height={1080}
           priority
           fetchPriority="high"
-          className="h-full w-auto md:h-auto md:w-full object-cover"
+          className="h-full w-auto lg:h-auto lg:w-full object-cover"
         />
         {/* Dark overlay */}
         {/* </div> */}

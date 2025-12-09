@@ -24,7 +24,7 @@ export const metadata = {
       "Serah Constructions – Best Interiors and Constructions in Bengaluru",
     description:
       "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
-    url: "https://serahconstructions.com",
+    url: "https://serahconstruction.com",
     siteName: "Serah Constructions",
     images: [
       {
@@ -47,9 +47,62 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: "https://serahconstructions.com",
+    canonical: "https://serahconstruction.com",
   },
 };
+const gridImages = [
+  {
+    col: [
+      {
+        src: getCloudinaryUrl("Building-1_yvshdh"),
+        alt: "Warm and elegant vanity unit with storage",
+      },
+      {
+        src: getCloudinaryUrl("auditorium-2_v3rd7h"),
+        alt: "Modern bedroom",
+      },
+    ],
+  },
+
+  {
+    col: [
+      {
+        src: getCloudinaryUrl("UXDG6435_gxw2o9"),
+        alt: "Kids bedroom",
+      },
+      {
+        src: getCloudinaryUrl("Church-3_soeqnm"),
+        alt: "False ceiling",
+      },
+    ],
+  },
+
+  {
+    col: [
+      {
+        src: getCloudinaryUrl("auditorium_ff8mas"),
+        alt: "Grotto",
+      },
+      {
+        src: getCloudinaryUrl("Church-2_gt5w6g"),
+        alt: "3d Visualization",
+      },
+    ],
+  },
+
+  {
+    col: [
+      {
+        src: getCloudinaryUrl("Church-1_chzpjx"),
+        alt: "Grotto",
+      },
+      {
+        src: getCloudinaryUrl("office_swpvt5"),
+        alt: "3d Visualization",
+      },
+    ],
+  },
+];
 
 export default function MyApp({}) {
   const heroSrc = getCloudinaryUrl("HERO-serah_gfmweo");
@@ -122,15 +175,19 @@ export default function MyApp({}) {
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
-                  Structural Warranty*
+                  10 Years Structural Warranty*
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
-                  5+ Years in Business
+                  Vastu Compliant
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
-                  50+ completed projects
+                  12+ Years in Business
+                </div>
+                <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
+                  <Check className="w-4 h-4" />
+                  100+ completed projects
                 </div>
                 <div className="text-neutral-100 flex gap-4 w-full items-center p-3">
                   <Check className="w-4 h-4" />
@@ -177,51 +234,30 @@ export default function MyApp({}) {
                 Our Portfolio
               </h2>
 
-              <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-center mb-8 md:gap-8">
-                <div className="w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
-                    src={getCloudinaryUrl(
-                      "photo-1600585154340-be6161a56a0c_tjam6z"
-                    )}
-                    width={400}
-                    height={500}
-                    alt="building"
-                  />
-                </div>
-                <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
-                    src={getCloudinaryUrl(
-                      "photo-1505691938895-1758d7feb511_dqje6f"
-                    )}
-                    width={400}
-                    height={500}
-                    alt="building"
-                  />
-                </div>
-                <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
-                    src={getCloudinaryUrl("UXDG6435_gxw2o9")}
-                    width={400}
-                    height={500}
-                    alt="island kitchen"
-                  />
-                </div>
-                <div className=" w-auto h-full mx-auto basis-1/2 md:basis-1/4 p-0.5">
-                  <Image
-                    className="w-full rounded-xs aspect-[3/4] object-cover object-bottom"
-                    src={getCloudinaryUrl("WZXY3953_zcp5my")}
-                    width={400}
-                    height={500}
-                    alt="building"
-                  />
-                </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                {gridImages.map((item, index) => (
+                  <div key={index} className="grid gap-2">
+                    {item.col.map((item, index) => (
+                      <div className="relative" key={index}>
+                        <Image
+                          className="h-full w-full object-cover rounded-xs"
+                          src={item.src}
+                          alt={item.alt}
+                          width={400}
+                          height={300}
+                        />
+                        <p className="absolute bottom-0 p-1 text-xs  px-4 font-light bg-none text-black opacity-50">
+                          &copy; serahconstruction
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
+
               <Link
                 href="/projects"
-                className="px-6 py-3 bg-primary-500 text-neutral-900 text-center uppercase font-medium rounded-xs  hover:bg-primary-400 transition"
+                className="block mt-12 max-w-xs mx-auto px-6 py-3 bg-primary-500 text-neutral-900 text-center uppercase font-medium rounded-xs  hover:bg-primary-400 transition"
               >
                 View More
               </Link>

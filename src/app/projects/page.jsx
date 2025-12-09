@@ -9,28 +9,23 @@ export const metadata = {
 export default function GalleryPage() {
   const images = [
     {
-      src: getCloudinaryUrl("gallery_14_fu2uqp"),
-      alt: "Grotto",
+      src: getCloudinaryUrl("Building-1_yvshdh"),
+      alt: "Balcony",
     },
     {
-      src: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z"),
-      alt: "3d Visualization",
+      src: getCloudinaryUrl("gallery_14_fu2uqp"),
+      alt: "Grotto",
     },
     {
       src: getCloudinaryUrl("1000238398_cdideo"),
       alt: "Warm and elegant vanity unit with storage",
     },
-
     {
-      src: getCloudinaryUrl("BPII9215_ped48s"),
-      alt: "Kids bedroom",
-    },
-    {
-      src: getCloudinaryUrl("photo-1505691938895-1758d7feb511_dqje6f"),
+      src: getCloudinaryUrl("auditorium-2_v3rd7h"),
       alt: "False ceiling",
     },
     {
-      src: getCloudinaryUrl("IMG-20251017-WA0017_sk0jzr"),
+      src: getCloudinaryUrl("Church-3_soeqnm"),
       alt: "Comfy sitout",
     },
     {
@@ -38,11 +33,7 @@ export default function GalleryPage() {
       alt: "Glass panneling",
     },
     {
-      src: getCloudinaryUrl("Photo_3d_visual_lgqmkw"),
-      alt: "Balcony",
-    },
-    {
-      src: getCloudinaryUrl("WZXY3953_zcp5my"),
+      src: getCloudinaryUrl("auditorium_ff8mas"),
       alt: "Building Exteriors",
     },
 
@@ -53,18 +44,6 @@ export default function GalleryPage() {
     {
       src: getCloudinaryUrl("PDTH8875_m3xhhg"),
       alt: "3d Visualization",
-    },
-    {
-      src: getCloudinaryUrl("DPVS7540_us0cnf"),
-      alt: "Grotto",
-    },
-    {
-      src: getCloudinaryUrl("EGDQ3065_rulzcw"),
-      alt: "3d Visualization",
-    },
-    {
-      src: getCloudinaryUrl("WSAV5469_hy4gtx"),
-      alt: "Grotto",
     },
     {
       src: getCloudinaryUrl("OUMK7387_ztxsix"),
@@ -153,7 +132,7 @@ export default function GalleryPage() {
 
       <div className="min-h-screen bg-neutral-800">
         <h1 className="text-2xl text-center py-6">Image Gallery</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:w-3/4 lg:w-1/2 md:mx-auto gap-4 p-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4  2xl:w-1/2 md:mx-auto gap-4 p-4">
           {images.map((img, i) => (
             <FullscreenImageViewer
               key={i}

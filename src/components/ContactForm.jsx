@@ -1,7 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Close, Success16 } from "../icons/Svg";
+import { Back, Close, Success16 } from "../icons/Svg";
 import HomeTypeForm from "./HomeTypeForm";
 import LayoutForm from "./LayoutForm";
 import ServiceTypeForm from "./ServiceTypeForm";
@@ -9,13 +9,16 @@ import ServicesForm from "./ServicesForm";
 import FloorsForm from "./FloorsForm";
 
 export default function ContactForm({ setOpen }) {
+  const phone =
+    typeof window !== "undefined" ? localStorage.getItem("phone") : undefined;
+
   const formStepLocal = Number(
     typeof window !== "undefined" ?? localStorage.getItem("form-step")
   );
   const [step, setStep] = useState(formStepLocal ? formStepLocal : 1);
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phone: phone ? phone : "",
     email: "",
     leadSource: "website",
     company: "serahconstruction",
@@ -28,6 +31,10 @@ export default function ContactForm({ setOpen }) {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const inputsRef = useRef([]);
+
+  useEffect(() => {
+    setStep(formStepLocal === "completed" ? 8 : phone ? 3 : 1);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -113,6 +120,7 @@ export default function ContactForm({ setOpen }) {
 
       localStorage.setItem("form-step", 3);
       setStep(3);
+      localStorage.setItem("phone", formData.phone);
 
       setOtp(["", "", "", ""]);
     } catch (error) {
@@ -325,6 +333,15 @@ export default function ContactForm({ setOpen }) {
       {/* Step Indicator */}
       {step !== 8 && (
         <p className="text-sm mt-4 text-center">Step {step} of 7</p>
+      )}
+
+      {step > 3 && (
+        <button
+          className="text-center p-2 border border-neutral-200 mt-6 mx-auto"
+          onClick={() => setStep(step - 1)}
+        >
+          <Back className="w-5 h-5" />
+        </button>
       )}
 
       <div

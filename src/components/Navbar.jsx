@@ -20,14 +20,14 @@ export default function Navbar() {
         className={`absolute lg:fixed top-0 right-0 left-0 w-full z-100 transition px-2 md:px-4`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 bg-neutral-900 border border-neutral-700/50 mt-2 md:mt-4">
-          <div className="flex gap-x-4 lg:justify-between h-12 md:h-20 items-center w-full">
+          <div className="flex gap-x-4 lg:justify-between h-12 md:h-18 items-center w-full">
             {/* Logo */}
 
             <Link className="block" href="/">
-              <Logo className="w-12 md:w-20 bg-none" />
+              <Logo className="w-10 md:w-16 bg-none" />
             </Link>
 
-            <h1 className="block lg:hidden">Serah Construction</h1>
+            <h1 className="lg:text-xl">Serah Construction</h1>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex gap-12 py-4 px-8 rounded items-center">

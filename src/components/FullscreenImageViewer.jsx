@@ -22,9 +22,9 @@ export default function FullscreenImageViewer({ images, image, index }) {
           alt={image.alt}
           width={300}
           height={300}
-          className="w-48 h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="w-48 h-48 rounded-md absolute inset-0 h-full bg-black/50 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition">
+        <div className="rounded-md absolute inset-0 h-full bg-black/50 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition">
           Click to view
         </div>
       </div>

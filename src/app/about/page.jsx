@@ -22,7 +22,7 @@ export default function MyApp({ Component, pageProps }) {
           <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
             <div className="basis-1/2 p-4">
               <Image
-                src={getCloudinaryUrl("gallery_13_pnynem")}
+                src={getCloudinaryUrl("")}
                 width={800}
                 height={600}
                 alt="Our team"

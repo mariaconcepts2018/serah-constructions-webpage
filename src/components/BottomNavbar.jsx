@@ -62,7 +62,7 @@ const BottomNavbar = () => {
             <button
               onClick={handleClick}
               type="button"
-              className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 shadow-md text-neutral-900 rounded group focus:ring focus:ring-neutral-500 focus:outline-none"
+              className="border border-neutral-600 py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 shadow-md text-neutral-900 rounded group focus:ring focus:ring-neutral-500 focus:outline-none"
             >
               GET FREE <br /> ESTIMATE
               <span className="sr-only">Get a free Estimate</span>
