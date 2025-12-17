@@ -70,19 +70,19 @@ export default function Footer() {
         <GoogleMap />
         <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-neutral-200 md:flex-row md:justify-between">
           <p className="mb-4 text-sm text-center text-neutral-200 md:mb-0">
-            Copyright © 2024 Serah Constructions. <br />
+            Copyright © 2025 Serah Constructions. <br />
             All Rights Reserved.
           </p>
           <div className="flex gap-4 text-neutral-200 sm:justify-center items-center">
             <Link
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/serah.construction.blr/"
               target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
               <Facebook className="w-7" />
             </Link>
             <Link
-              href="https://www.instagram.com/serah_constructions/"
+              href="https://www.instagram.com/serah.construction/"
               target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
@@ -94,14 +94,14 @@ export default function Footer() {
               className="block transition-opacity text-inherit hover:opacity-80"
             >
               <Youtube className="w-7" />
-            </Link>
+            </Link> */}
             <Link
-              href="https://www.pintrest.com/"
+              href="https://in.pinterest.com/serahconstruction/"
               target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
               <Pinterest className="w-7" />
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>

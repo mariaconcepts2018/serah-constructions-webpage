@@ -7,7 +7,7 @@ import { About, Check, Eye, GoalsFill, Phone } from "@/icons/Svg";
 import getCloudinaryUrl from "@/lib/cloudinary";
 
 export const metadata = {
-  title: "Serah Constructions - Building Together",
+  title: "Serah Constructions - Strong Foundations, Strong Relationships",
 
   description:
     "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
