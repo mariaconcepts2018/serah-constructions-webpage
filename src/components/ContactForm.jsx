@@ -8,7 +8,7 @@ import ServiceTypeForm from "./ServiceTypeForm";
 import ServicesForm from "./ServicesForm";
 import FloorsForm from "./FloorsForm";
 
-export default function ContactForm({ setOpen }) {
+export default function ContactForm({ setOpen, isUrl }) {
   const phone =
     typeof window !== "undefined" ? localStorage.getItem("phone") : undefined;
 
@@ -143,12 +143,14 @@ export default function ContactForm({ setOpen }) {
             transition={{ duration: 0.4 }}
           />
         </div>
-        <button
-          className="cursor-pointer rounded-full w-5 h-5 bg-neutral-700 "
-          onClick={() => setOpen(false)}
-        >
-          <Close className="text-neutral-500 w-5 h-5" />
-        </button>
+        {!isUrl && (
+          <button
+            className="cursor-pointer rounded-full w-5 h-5 bg-neutral-700 "
+            onClick={() => setOpen(false)}
+          >
+            <Close className="text-neutral-500 w-5 h-5" />
+          </button>
+        )}
       </div>
       <AnimatePresence mode="wait">
         <motion.div
@@ -335,7 +337,7 @@ export default function ContactForm({ setOpen }) {
         <p className="text-sm mt-4 text-center">Step {step} of 7</p>
       )}
 
-      {step > 3 && (
+      {step > 3 && step !== 8 && (
         <button
           className="text-center p-2 border border-neutral-200 mt-6 mx-auto"
           onClick={() => setStep(step - 1)}

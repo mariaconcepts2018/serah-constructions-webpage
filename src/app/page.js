@@ -6,8 +6,10 @@ import HoverCard from "@/components/HoverCard";
 import { About, Check, Eye, GoalsFill, Phone } from "@/icons/Svg";
 import getCloudinaryUrl from "@/lib/cloudinary";
 
+const heroImage = getCloudinaryUrl("Building-1_yvshdh");
+
 export const metadata = {
-  title: "Serah Constructions - Strong Foundations, Strong Relationships",
+  title: "Serah Constructions - Building Trust and Strong Foundations",
 
   description:
     "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
@@ -20,15 +22,14 @@ export const metadata = {
   ],
   authors: [{ name: "Serah Constructions" }],
   openGraph: {
-    title:
-      "Serah Constructions – Best Interiors and Constructions in Bengaluru",
+    title: "Serah Constructions – Building Trust and Strong Foundations",
     description:
       "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
-    url: "https://serahconstruction.com",
+    url: "https://www.serahconstruction.com",
     siteName: "Serah Constructions",
     images: [
       {
-        url: "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp",
+        url: heroImage,
         width: 1200,
         height: 630,
         alt: "Serah - Construction Services",
@@ -39,15 +40,13 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maria Concepts – Best Interiors and Constructions in Bengaluru",
+    title: "Maria Concepts – Building Trust and Strong Foundations",
     description:
       "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
-    images: [
-      "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp",
-    ],
+    images: [heroImage],
   },
   alternates: {
-    canonical: "https://serahconstruction.com",
+    canonical: "https://www.serahconstruction.com",
   },
 };
 const gridImages = [

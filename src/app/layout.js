@@ -47,7 +47,7 @@ const righteous = Righteous({
 });
 
 export const metadata = {
-  title: "Serah Constructions - Strong Foundations, Strong Relationships",
+  title: "Serah Constructions - Building Trust and Strong Foundations",
 
   description:
     "Serah Constructions offering a comprehensive range of services designed to meet the unique needs of every client with a dedication to quality, innovation",
